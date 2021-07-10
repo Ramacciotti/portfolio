@@ -1,0 +1,79 @@
+{
+    "works": {
+        "items": [
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_subliminapp.svg?alt=media&token=d496962d-8316-4bb6-8d1c-2cd8c907d20d",
+                "title": "Subliminapp",
+                "subtitle": "App disponível no Google Play",
+                "link": "https://play.google.com/store/apps/details?id=com.subliminapp"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_chat.svg?alt=media&token=f9e912ba-20c7-41e2-bbc1-77b65ff1cdd7",
+                "title": "Sala de Chat Online",
+                "subtitle": "Vue.js + Login pelo Google + Firebase",
+                "link": "https://ramacciotti.github.io/vue_chat_firebase/"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_login.svg?alt=media&token=088f1e75-5252-42f1-86cf-dfe0d59a5c8b",
+                "title": "Cadastro / Login",
+                "subtitle": "Mysql Online, Php",
+                "link": "https://ramacciottidatabase.000webhostapp.com/site_login/index.php"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_tarefas.svg?alt=media&token=0ee041b8-97f9-496b-9ee9-b58e0fd833d4",
+                "title": "Lista de Tarefas",
+                "subtitle": "Frameworks: Vue + Vuetify",
+                "link": "https://ramacciotti.github.io/vue_todo/#/"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_disclosure.svg?alt=media&token=1199c08c-90ab-44f3-b578-5e1241b3f5b2",
+                "title": "Disclosure",
+                "subtitle": "Game Stealth em 3D",
+                "link": "https://jogosimpacta.itch.io/disclosure"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_contatos.svg?alt=media&token=ebd29ab4-7640-4fe1-a9d9-8fea841a6092",
+                "title": "Lista de Contatos",
+                "subtitle": "Framework: Vue.js",
+                "link": "https://ramacciotti.github.io/vue_contatos/"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_formulario.svg?alt=media&token=758abe7b-19a1-42b8-846a-4f972ca236b8",
+                "title": "Formulário com SQL",
+                "subtitle": "Bootstrap, Php",
+                "link": "https://ramacciottidatabase.000webhostapp.com/site_formulario/index.php"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_ecommerce.svg?alt=media&token=eb580b54-9cd5-46a9-912f-7e405f7dfc05",
+                "title": "E-Commerce",
+                "subtitle": "Interface de uma loja online",
+                "link": "https://ramacciotti.github.io/site_ecommerce/"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_clima.svg?alt=media&token=62ad7f9a-c818-4d38-a345-bf08ee277f58",
+                "title": "Clima Atual",
+                "subtitle": "App consumindo API externa",
+                "link": "https://ramacciotti.github.io/aplicativo_clima/"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_cobra.svg?alt=media&token=53001406-2cd0-4d4f-a8ed-e39192461d24",
+                "title": "Snake Game",
+                "subtitle": "Jogo da cobrinha com JavaScript",
+                "link": "https://ramacciotti.github.io/jogo_cobrinha/"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_instagram.svg?alt=media&token=a5a45ddb-b21b-4c3b-9483-77a248ebcfc8",
+                "title": "Interface Instagram",
+                "subtitle": "Recriado com flexbox",
+                "link": "https://ramacciotti.github.io/site_login_instagram/index.html"
+            },
+            {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/mariana-ramacciotti-portfolio.appspot.com/o/svg%2Ficone_netflix.svg?alt=media&token=66d56529-d178-448b-8ff4-f2d23f37b779",
+                "title": "Interface Netflix",
+                "subtitle": "Recriado com flexbox e JQuery",
+                "link": "https://ramacciotti.github.io/site_netflix/"
+            }
+            
+        ]
+    }
+}
