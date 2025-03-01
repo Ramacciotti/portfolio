@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Mariana Ramacciotti - Desenvolvedora Backend Java; trabalha com microsserviços, AWS e boas práticas de desenvolvimento. Confira meus projetos, artigos e habilidades técnicas.">
+        <meta name="keywords" content="Desenvolvedora Backend, Java, Microsserviços, AWS, PostgreSQL, Spring Boot, Clean Code, Mariana Ramacciotti, Desenvolvimento de Software">
+        <meta name="author" content="Mariana Ramacciotti">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="Mariana Ramacciotti - Desenvolvedora Backend">
+        <meta property="og:description" content="Portfólio de Mariana Ramacciotti, Desenvolvedora Backend especializada em Java, microsserviços e AWS.">
+        <meta property="og:image" content="https://seusite.com/img/photo.jpg">
+        <meta property="og:type" content="website">
+        <title>Mariana Ramacciotti - Backend Developer</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+
+        <header id="header" role="banner">
+
+            <div class="menu-icon" onclick="toggleMenu()" aria-label="Abrir menu">☰</div>
+
+            <nav role="navigation" aria-label="Menu principal">
+            <a href="#header">HOME</a>
+            <a href="#about">SOBRE</a>
+            <a href="#articles">ARTIGOS</a>
+            </nav>
+
+            <div class="mobile-menu" id="mobile-menu" aria-label="Menu móvel">
+            <a href="#header">HOME</a>
+            <a href="#about">SOBRE</a>
+            <a href="#articles">ARTIGOS</a>
+            </div>
+
+            <div id="logo" role="img" aria-label="Logo Mariana Ramacciotti">
+            <img src="img/logo.svg" alt="Logo Mariana Ramacciotti - Desenvolvedora Backend">
+            </div>
+
+            <div id="resume-icon" class="resume-icon" onclick="openResume()" aria-label="Abrir currículo">
+            <i class="fas fa-file-alt"></i>
+            </div>
+
+            <div id="social-icons" class="social-icons" role="contentinfo" aria-label="Redes sociais">
+            <a href="https://github.com/Ramacciotti" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/marianaramacciotti/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marianaotti@gmail.com&su=Contato&body=Olá,%20quero%20falar%20com%20você!" target="_blank" aria-label="Enviar e-mail">
+            <i class="fas fa-envelope"></i>
+            </a>
+
+            </div>
+
+        </header>
+
+        <main role="main">
+
+        <section id="about" class="about-section" aria-labelledby="about-title">
+
+        <div class="about-content">
+
+        <h2 class="about-title" id="about-title">Sobre Mim</h2>
+
+        <div class="about-grid">
+        <div class="about-text">
+            <p>
+                Iniciei minha jornada na área de TI em <strong>junho de 2021</strong> como <strong>Analista de Sistemas</strong>, após ser selecionada para o programa <strong>Up!Tech</strong>, acelerador de carreiras da <strong>Riachuello</strong>. Desde então, venho me especializando no desenvolvimento de <strong>sistemas robustos e de alto desempenho</strong>, sempre aplicando <strong>boas práticas de desenvolvimento</strong> e padrões de projeto para garantir <strong>códigos legíveis, eficientes e de fácil manutenção</strong>.
+            </p>
+            <br>
+            <p>
+                Minha primeira experiência na área foi no <strong>Banco Midway</strong>, onde atuei na <strong>Squad Open Finance</strong>, sendo responsável pelo <strong>armazenamento de dados não sensíveis de instituições financeiras</strong>, utilizando <strong>PostgreSQL</strong>. Além disso, integrei <strong>microsserviços com AWS DynamoDB</strong>, assegurando a comunicação fluida e eficiente entre APIs. Implementei o <strong>POC para o Portal de Desenvolvedores</strong>, que permitia upload de <strong>Swaggers no Amazon S3</strong>, e também criei <strong>testes unitários e de integração</strong> para a funcionalidade de <strong>pagamento via PIX</strong>; entre outras contribuições.
+            </p>
+            <br>
+            <p>
+                Pela <strong>Ília</strong>, no cliente <strong>Mio Vinci Partners</strong>, trabalhei em projetos voltados à <strong>gestão de previdência</strong>. Na <strong>Squad Parcerias</strong>, desenvolvi soluções como o <strong>disparo automático de e-mails para notificações de recusa, aceitação e envio de propostas</strong>, utilizando <strong>AWS SQS</strong> para automação e otimização dos fluxos de mensagens. Também <strong>corrigi bugs</strong> como ajustes no cadastro, revisão da política de senhas e integração de captcha para aumentar a <strong>segurança do login</strong>, entre outros projetos.
+            </p>
+            <br>
+            <p>
+                Já na <strong>Squad Future</strong>, contribuí para a <strong>melhoria da exibição de dados dos planos de previdência no aplicativo</strong>, além de implementar o <strong>cálculo do valor mínimo de aporte inicial</strong> com base em <strong>listas de fundos e percentuais específicos</strong>. Resolvi bugs em <strong>pedidos de portabilidade para dependentes</strong>, além de realizar ajustes importantes na <strong>visualização do saldo por alíquota</strong>, entre outras atividades.
+            </p>
+        </div>
+
+        <div class="about-skills">
+            <div class="profile-photo">
+                <img src="img/photo.jpg" alt="Foto de Mariana Ramacciotti" aria-label="Foto de perfil">
+            </div>
+            <h3>Habilidades Técnicas</h3>
+            <div class="skills-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Clean Code</span>
+                <span class="tag">AWS S3</span>
+                <span class="tag">AWS SQS</span>
+                <span class="tag">AWS DynamoDB</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Swagger</span>
+                <span class="tag">Git</span>
+                <span class="tag">Postman</span>
+                <span class="tag">Testes Unitários</span>
+                <span class="tag">Testes de Integração</span>
+            </div>
+        </div>
+        </div>
+
+        </div>
+
+        </section>
+
+        <section id="articles" class="articles-section" aria-labelledby="articles-title">
+
+        <div class="articles-content">
+
+        <h2 class="articles-title" id="articles-title">Artigos</h2>
+
+        <div class="articles-grid" id="articles-grid" role="list">
+        <!-- Os cards serão inseridos aqui dinamicamente -->
+        </div>
+
+        </div>
+
+        </section>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+
+</html>

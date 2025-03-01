@@ -1,0 +1,38 @@
+[
+  {
+    "titulo": "Mensagens Síncronas x Assíncronas",
+    "descricao": "Já se perguntou por que alguns sistemas demoram para responder enquanto outros são instantâneos? Descubra a diferença entre processos síncronos e assíncronos e como essa escolha pode mudar a experiência do usuário!",
+    "link": "https://www.linkedin.com/pulse/mensagens-s%C3%ADncronas-x-ass%C3%ADncronas-mariana-ramacciotti-guose/?trackingId=QS%2FzQEIHQ5OxRjnzcP1WGA%3D%3D",
+    "icone": "fas fa-exchange-alt"
+  },
+  {
+    "titulo": "Boas Práticas no Desenvolvimento de Microsserviços com Java e Spring Boot",
+    "descricao": "Trabalhar com microsserviços em Java e Spring Boot pode ser desafiador, mas algumas boas práticas podem ajudar bastante a manter o código organizado e escalável.\n\nNeste artigo, falo sobre como definir bem a responsabilidade de cada serviço, usar comunicação assíncrona para melhorar a performance, organizar os projetos de forma eficiente e garantir um bom monitoramento e documentação das APIs.",
+    "link": "https://www.linkedin.com/pulse/boas-pr%C3%A1ticas-desenvolvimento-de-microsservi%C3%A7os-com-java-ramacciotti-cudzf/?trackingId=qEYcJ3ynRNqa87Nl%2BFowfg%3D%3D",
+    "icone": "fas fa-microchip"
+  },
+  {
+    "titulo": "Afinal, o que é SOLID?",
+    "descricao": "Neste artigo desvendamos os segredos por trás desse conjunto de princípios que promovem a robustez, manutenibilidade e escalabilidade do seu código! ",
+    "link": "https://www.linkedin.com/pulse/afinal-o-que-%C3%A9-solid-mariana-ramacciotti/?trackingId=OOly9DndQbuIwOYQu7IPNA%3D%3D",
+    "icone": "fas fa-shield-alt"
+  },
+  {
+    "titulo": "Herança, Polimorfismo e Encapsulamento (POO)",
+    "descricao": "Neste artigo exploramos conceitos de herança, encapsulamento e polimorfismo; os três superpoderes que impulsionam a Programação Orientada à Objetos (POO). Saiba como usá-los para criar código mais flexível e eficiente!",
+    "link": "https://www.linkedin.com/pulse/heran%C3%A7a-polimorfismo-e-encapsulamento-poo-mariana-ramacciotti/?trackingId=fQPH5DbuQdqfTIqY%2Blc5Cw%3D%3D",
+    "icone": "fas fa-cogs"
+  },
+  {
+    "titulo": "O que é Open Finance?",
+    "descricao": "Saiba como o Open Finance está transformando a maneira como lidamos com dinheiro. Descubra suas vantagens e como isso afeta sua vida financeira!",
+    "link": "https://www.linkedin.com/pulse/clean-code-escrevendo-codigo-melhor",
+    "icone": "fas fa-coins"
+  },
+  {
+    "titulo": "Bem-Estar no Trabalho Remoto: Ferramentas Valiosas e Produtos Essenciais",
+    "descricao": "Você passa longas horas trabalhando sentado(a)? Este artigo reúne dicas práticas, recomendações de produtos/programas, além de insights embasados em estudos científicos para cuidar de si mesmo enquanto enfrenta os desafios do trabalho remoto. Lembre-se, cada pequeno passo em direção ao seu bem-estar é uma vitória em si. Ao adotar essas práticas, você está investindo não apenas no seu trabalho, mas no seu futuro e na sua saúde!",
+    "link": "https://www.linkedin.com/pulse/clean-code-escrevendo-codigo-melhor",
+    "icone": "fas fa-heartbeat"
+  }
+]
