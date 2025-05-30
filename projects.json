@@ -1,0 +1,83 @@
+[
+  {
+    "titulo": "Plataforma de Talentos Tech para Mulheres",
+    "descricao": "Projeto desenvolvido em Java com Thymeleaf que promove a inclusão e a diversidade no mercado de tecnologia, com foco na valorização da presença feminina. A aplicação permite registrar usuárias e exibir uma lista delas em cards interativos, que ao serem clicados redirecionam para seus perfis no LinkedIn, facilitando a conexão entre mulheres profissionais e oportunidades de trabalho.",
+    "link": "https://github.com/Ramacciotti/devas-job-plataform-java-springboot-thymeleaf-mysql",
+    "icone": "fa fa-female",
+    "tags": [
+      "java",
+      "mvc",
+      "spring-boot",
+      "maven",
+      "jpa",
+      "mysql",
+      "hibernate",
+      "thymeleaf"
+    ]
+  },
+  {
+    "titulo": "Sistema de Gestão de Funcionários",
+    "descricao": "Projeto de sistema CRUD para gerenciamento de funcionários, desenvolvido com Spring Boot, Feign Client e PostgreSQL. A aplicação expõe uma API RESTful, utilizando JPA e Hibernate para persistência de dados, com foco em boas práticas de desenvolvimento como testes unitários com JUnit 5, Mockito e cobertura de código com JaCoCo. Gerenciado com Maven, o projeto demonstra integração eficaz entre microsserviços e banco de dados relacional.",
+    "link": "https://github.com/Ramacciotti/employee-crud-rest-feign-springboot-postgresql",
+    "icone": "fa fa-briefcase",
+    "tags": [
+      "java",
+      "mvc",
+      "continuous-integration",
+      "continuous-deployment",
+      "github-actions",
+      "spring-boot",
+      "maven",
+      "jpa",
+      "rest-api",
+      "postgresql",
+      "junit-5",
+      "mockito",
+      "unit-testing",
+      "jacoco",
+      "hibernate",
+      "feign-client"
+    ]
+  },
+  {
+    "titulo": "Processamento em Lote de Arquivos Excel",
+    "descricao": "Projeto de processamento em lote desenvolvido com Spring Batch para leitura e tratamento de arquivos Excel e CSV, com os dados persistidos em banco de dados MySQL. A aplicação utiliza Java para automação do processamento, garantindo eficiência e escalabilidade na manipulação de grandes volumes de dados.",
+    "link": "https://github.com/Ramacciotti/employee-excel-batch-processing-springboot-mysql",
+    "icone": "fa fa-window-restore",
+    "tags": [
+      "java",
+      "mvc",
+      "spring-batch",
+      "continuous-integration",
+      "continuous-deployment",
+      "github-actions",
+      "mysql",
+      "excel",
+      "junit-5",
+      "mockito",
+      "unit-testing",
+      "jacoco"
+    ]
+  },
+  {
+    "titulo": "Sistema de Gestão de Artigos",
+    "descricao": "Aplicação web simples desenvolvida com Spring Boot para gerenciar e exibir artigos, utilizando Thymeleaf como motor de templates e PostgreSQL como banco de dados. O projeto adota a arquitetura MVC e integra tecnologias como Java, Spring Framework e Bootstrap 5 para oferecer uma interface responsiva e moderna.",
+    "link": "https://github.com/Ramacciotti/articles-thymeleaf-mvc-bootstrap-postgresql",
+    "icone": "fa fa-file-text",
+    "tags": [
+      "java",
+      "mvc",
+      "continuous-integration",
+      "continuous-deployment",
+      "github-actions",
+      "spring",
+      "thymeleaf",
+      "postgresql",
+      "bootstrap5",
+      "junit-5",
+      "mockito",
+      "unit-testing",
+      "jacoco"
+    ]
+  }
+]

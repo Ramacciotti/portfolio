@@ -250,11 +250,10 @@ nav a:hover {
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
-/* Estilos Gerais */
 .about-section {
     padding: 4rem 2rem;
-    background-color: #100f17; /* Fundo escuro */
-    color: white; /* Texto branco */
+    background-color: #100f17;
+    color: white;
 }
 
 .about-content {
@@ -264,7 +263,7 @@ nav a:hover {
 
 .about-title {
     font-size: 2.5rem;
-    color: #ee2a5a; /* Cor destacada para o título */
+    color:#3D3DB8;
     text-align: center;
     margin-bottom: 5rem;
     animation: fadeIn 1.5s ease-in-out;
@@ -463,6 +462,113 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Estilos da Seção de Projetos */
+.projects-section {
+    padding: 4rem 2rem;
+    background-color: #100f17;
+    color: white;
+}
+
+.projects-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-title {
+    font-size: 2.5rem;
+    color: #ee2a5a;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: #1e1d2a;
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tags-container {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.tags-container .tag {
+  background-color: #ee2a5a;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+
+/* Estilos da Seção de Videos */
+.videos-section {
+    padding: 2rem 2rem;
+    background-color: #100f17;
+    color: white;
+}
+
+.videos-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.videos-title {
+    font-size: 2.5rem;
+    color: #ee2a5a;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+
+.video-youtube-title {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.video-card iframe,
+.video-card img {
+    width: 100%;
+    height: auto;
+}
+
+.video-card {
+     background-color: #1e1d2a;
+     border-radius: 10px;
+     padding: 2rem;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     cursor: pointer;
+}
+
 .card-icon {
     text-align: center;
     font-size: 2.5rem;
@@ -506,6 +612,10 @@ nav a:hover {
 /* Responsividade */
 @media (max-width: 768px) {
     .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+  .videos-grid {
         grid-template-columns: 1fr;
     }
 
