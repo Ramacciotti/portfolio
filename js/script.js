@@ -100,6 +100,78 @@ async function loadProjects() {
     }
 }
 
+function initRecommendationsCarousel() {
+    const track = document.querySelector('#recommendations .carousel-track');
+    const items = document.querySelectorAll('#recommendations .carousel-item');
+    const indicatorsContainer = document.querySelector('#recommendations .carousel-indicators');
+    const carouselContainer = document.querySelector('#recommendations .carousel-container');
+
+    let currentIndex = 0;
+    const totalItems = items.length;
+    let interval;
+
+    indicatorsContainer.innerHTML = '';
+
+    for (let i = 0; i < totalItems; i++) {
+        const btn = document.createElement('button');
+        btn.setAttribute('aria-label', `Ir para o slide ${i + 1}`);
+        if (i === 0) btn.classList.add('active');
+        btn.addEventListener('click', () => {
+            currentIndex = i;
+            updateCarousel();
+            resetInterval();
+        });
+        indicatorsContainer.appendChild(btn);
+    }
+
+    function showSlide(index) {
+        const offset = -index * 100;
+        track.style.transform = `translateX(${offset}%)`;
+    }
+
+    function updateIndicators() {
+        const buttons = indicatorsContainer.querySelectorAll('button');
+        buttons.forEach((btn, i) => {
+            btn.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function updateContainerHeight() {
+        const currentItem = items[currentIndex];
+        const img = currentItem.querySelector('img');
+
+        if (img.complete) {
+            // Calcula altura proporcional baseada na largura atual do item
+            const height = img.naturalHeight * (currentItem.clientWidth / img.naturalWidth);
+            carouselContainer.style.height = height + 'px';
+        } else {
+            // Espera a imagem carregar e tenta de novo
+            img.onload = () => {
+                updateContainerHeight();
+            };
+        }
+    }
+
+    function updateCarousel() {
+        showSlide(currentIndex);
+        updateIndicators();
+        updateContainerHeight();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }
+
+    function resetInterval() {
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 4000);
+    }
+
+    updateCarousel();
+    interval = setInterval(nextSlide, 4000);
+}
+
 async function loadArticles() {
     const articlesGrid = document.getElementById('articles-grid');
 
@@ -149,11 +221,12 @@ async function loadArticles() {
     }
 }
 
-// Carregar artigos ao iniciar a página
 document.addEventListener('DOMContentLoaded', () => {
     loadArticles();
     loadProjects();
+    initRecommendationsCarousel();
 });
+
 const resumeIcon = document.getElementById("resume-icon");
 const socialIcons = document.getElementById("social-icons");
 window.addEventListener("scroll", () => {

@@ -585,6 +585,76 @@ nav a:hover {
   display: block;
 }
 
+/* Recomendações */
+.recommendations-title {
+    font-size: 2.5rem;
+    color: #ee2a5a;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.recommendations-content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-container {
+      position: relative;
+      overflow: hidden;
+      width: 79%;
+      height: auto;
+      transition: height 0.4s ease;
+      border-radius: 8px;
+}
+
+.carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      will-change: transform;
+}
+
+.carousel-item {
+      flex: 0 0 100%;
+      user-select: none;
+}
+
+.carousel-item img {
+    width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background-color: #3D3DB8;
+}
+
+.carousel-indicators button:focus {
+  outline: 2px solid #3D3DB8;
+  outline-offset: 2px;
+}
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     .articles-grid {
@@ -612,7 +682,6 @@ nav a:hover {
     }
 }
 
-/* Skeleton Loading */
 .skeleton-card {
     background: #1E1D2A;
     border-radius: 8px;
