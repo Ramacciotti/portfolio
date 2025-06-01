@@ -10,6 +10,7 @@ function toggleMenu() {
 async function loadProjects() {
     const projectsGrid = document.getElementById('projects-grid');
 
+    // Skeletons enquanto carrega
     for (let i = 0; i < 3; i++) {
         const skeleton = document.createElement('div');
         skeleton.className = 'skeleton-card';
@@ -30,77 +31,74 @@ async function loadProjects() {
 
         projectsGrid.innerHTML = '';
 
-      projects.forEach(project => {
-          const card = document.createElement('div');
-          card.className = 'project-card';
-          card.onclick = () => window.open(project.link, '_blank');
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
 
-          const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+            const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-          card.innerHTML = `
-              <div class="card-icon">
-                  <i class="${project.icone}"></i>
-              </div>
-              <h3 class="card-title">${project.titulo}</h3>
-              <p class="card-description">${project.descricao}</p>
-              <div class="tags-container">
-                  ${tagsHTML}
-              </div>
-              <div class="card-footer">
-                  <span class="read-more">Ver projeto</span>
-                  <i class="fas fa-arrow-right"></i>
-              </div>
-          `;
+            let mediaHTML = '';
+            let showIcon = true;
 
-          projectsGrid.appendChild(card);
-      });
+            if (project.youtubeID) {
+                mediaHTML = `
+                    <div class="video-thumbnail youtube-video" data-youtube-id="${project.youtubeID}">
+                        <iframe
+                            width="100%"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen
+                            src="https://www.youtube.com/embed/${project.youtubeID}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeID}&controls=0&modestbranding=1&rel=0"
+                        ></iframe>
+                    </div>
+                `;
+                showIcon = false;
+            } else if (project.videoURL) {
+                mediaHTML = `
+                    <div class="video-thumbnail">
+                        <video src="${project.videoURL}" autoplay muted loop playsinline></video>
+                    </div>
+                `;
+                showIcon = false;
+            } else if (project.videoThumbnail) {
+                mediaHTML = `
+                    <div class="video-thumbnail">
+                        <img src="${project.videoThumbnail}" alt="Thumbnail do vídeo de ${project.titulo}">
+                    </div>
+                `;
+            }
+
+            card.innerHTML = `
+                <div class="card-media">
+                    ${mediaHTML}
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">${project.titulo}</h3>
+                    ${showIcon ? `<div class="card-icon"><i class="${project.icone}"></i></div>` : ''}
+                    <p class="card-description">${project.descricao}</p>
+                    <div class="tags-container">${tagsHTML}</div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ramacciotti/${project.github}" target="_blank" rel="noopener noreferrer">
+                           Ver Projeto no Github <i class="fas fa-arrow-right"></i>
+                       </a>
+                       <a href="https://youtube.com/watch?v=${project.youtubeID}" target="_blank" rel="noopener noreferrer">
+                           Ver Projeto no Youtube <i class="fas fa-arrow-right"></i>
+                       </a>
+                    </div>
+                </div>
+            `;
+
+            projectsGrid.appendChild(card);
+        });
+
+        // REMOVIDO: IntersectionObserver para vídeos locais e iframes do YouTube
+        // Todos os vídeos já vão tocar automaticamente e ficar exibidos o tempo todo
 
     } catch (error) {
         console.error('Erro ao carregar os projetos:', error);
         projectsGrid.innerHTML = '<p>Erro ao carregar projetos. Tente novamente mais tarde.</p>';
     }
 }
-
-async function loadVideos() {
-  const videosGrid = document.getElementById('videos-grid');
-
-  for (let i = 0; i < 3; i++) {
-    const skeleton = document.createElement('div');
-    skeleton.className = 'skeleton-card';
-    skeleton.innerHTML = `
-      <div class="skeleton-icon"></div>
-      <div class="skeleton-title"></div>
-    `;
-    videosGrid.appendChild(skeleton);
-  }
-
-  try {
-    const response = await fetch('videos.json');
-    const videos = await response.json();
-
-    console.log('Vídeos carregados:', videos);
-
-    videosGrid.innerHTML = '';
-
-    videos.forEach(video => {
-      const card = document.createElement('div');
-      card.className = 'video-card';
-      card.onclick = () => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, '_blank');
-
-      card.innerHTML = `
-        <img src="https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg" alt="Thumbnail de ${video.titulo}" class="video-thumbnail">
-        <h3 class="video-youtube-title">${video.titulo}</h3>
-      `;
-
-      videosGrid.appendChild(card);
-    });
-
-  } catch (error) {
-    console.error('Erro ao carregar os vídeos:', error);
-    videosGrid.innerHTML = '<p>Erro ao carregar vídeos. Tente novamente mais tarde.</p>';
-  }
-}
-
 
 async function loadArticles() {
     const articlesGrid = document.getElementById('articles-grid');
@@ -154,7 +152,6 @@ async function loadArticles() {
 // Carregar artigos ao iniciar a página
 document.addEventListener('DOMContentLoaded', () => {
     loadArticles();
-    loadVideos();
     loadProjects();
 });
 const resumeIcon = document.getElementById("resume-icon");
