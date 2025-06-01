@@ -483,17 +483,27 @@ nav a:hover {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
 .project-card {
-    background-color: #1e1d2a;
-    border-radius: 10px;
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+     background-color: #1e1d2a;
+       border-radius: 10px;
+       padding: 2rem;
+       display: flex;
+       flex-direction: column;
+       gap: 1.5rem; /* espaço entre os itens */
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-media {
+    width: 100%;
+}
+
+.card-content {
+    flex: 1 1 60%;
 }
 
 .project-card:hover {
@@ -518,57 +528,6 @@ nav a:hover {
   user-select: none;
 }
 
-
-/* Estilos da Seção de Videos */
-.videos-section {
-    padding: 2rem 2rem;
-    background-color: #100f17;
-    color: white;
-}
-
-.videos-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.videos-title {
-    font-size: 2.5rem;
-    color: #ee2a5a;
-    text-align: center;
-    margin-bottom: 3rem;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-
-.video-youtube-title {
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.videos-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-.video-card iframe,
-.video-card img {
-    width: 100%;
-    height: auto;
-}
-
-.video-card {
-     background-color: #1e1d2a;
-     border-radius: 10px;
-     padding: 2rem;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-     cursor: pointer;
-}
-
 .card-icon {
     text-align: center;
     font-size: 2.5rem;
@@ -587,7 +546,7 @@ nav a:hover {
     font-size: 1rem;
     line-height: 1.6;
     color: #ccc;
-    text-align: center;
+    text-align: justify;
     margin-bottom: 1.5rem;
 }
 
@@ -607,6 +566,13 @@ nav a:hover {
 
 .read-more {
     font-weight: bold;
+}
+
+.youtube-video iframe {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  display: block;
 }
 
 /* Responsividade */

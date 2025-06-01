@@ -10,6 +10,7 @@ function toggleMenu() {
 async function loadProjects() {
     const projectsGrid = document.getElementById('projects-grid');
 
+    // Skeletons enquanto carrega
     for (let i = 0; i < 3; i++) {
         const skeleton = document.createElement('div');
         skeleton.className = 'skeleton-card';
@@ -30,77 +31,105 @@ async function loadProjects() {
 
         projectsGrid.innerHTML = '';
 
-      projects.forEach(project => {
-          const card = document.createElement('div');
-          card.className = 'project-card';
-          card.onclick = () => window.open(project.link, '_blank');
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.onclick = () => window.open(project.link, '_blank');
 
-          const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+            const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-          card.innerHTML = `
-              <div class="card-icon">
-                  <i class="${project.icone}"></i>
-              </div>
-              <h3 class="card-title">${project.titulo}</h3>
-              <p class="card-description">${project.descricao}</p>
-              <div class="tags-container">
-                  ${tagsHTML}
-              </div>
-              <div class="card-footer">
-                  <span class="read-more">Ver projeto</span>
-                  <i class="fas fa-arrow-right"></i>
-              </div>
-          `;
+            let mediaHTML = '';
+            let showIcon = true;
 
-          projectsGrid.appendChild(card);
-      });
+            if (project.youtubeID) {
+                mediaHTML = `
+                    <div class="video-thumbnail youtube-video" data-youtube-id="${project.youtubeID}">
+                        <iframe
+                            width="100%"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen
+                            src=""
+                        ></iframe>
+                    </div>
+                `;
+                showIcon = false;
+            } else if (project.videoURL) {
+                mediaHTML = `
+                    <div class="video-thumbnail">
+                        <video src="${project.videoURL}" muted loop playsinline></video>
+                    </div>
+                `;
+                showIcon = false;
+            } else if (project.videoThumbnail) {
+                mediaHTML = `
+                    <div class="video-thumbnail">
+                        <img src="${project.videoThumbnail}" alt="Thumbnail do vídeo de ${project.titulo}">
+                    </div>
+                `;
+            }
+
+            // Montar o innerHTML:
+           card.innerHTML = `
+               <div class="card-media">
+                   ${mediaHTML}
+               </div>
+               <div class="card-content">
+                   <h3 class="card-title">${project.titulo}</h3>
+                   ${showIcon ? `<div class="card-icon"><i class="${project.icone}"></i></div>` : ''}
+                   <p class="card-description">${project.descricao}</p>
+                   <div class="tags-container">${tagsHTML}</div>
+                   <div class="card-footer">
+                       <span class="read-more">Ver Projeto no Github</span>
+                       <i class="fas fa-arrow-right"></i>
+                   </div>
+               </div>
+           `;
+
+            projectsGrid.appendChild(card);
+        });
+
+        // IntersectionObserver para vídeos locais
+        const videos = document.querySelectorAll('video');
+
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play();
+                } else {
+                    entry.target.pause();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        videos.forEach(video => videoObserver.observe(video));
+
+        // IntersectionObserver para iframes YouTube
+        const youtubeContainers = document.querySelectorAll('.youtube-video');
+
+        const iframeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const container = entry.target;
+                const iframe = container.querySelector('iframe');
+                const videoId = container.getAttribute('data-youtube-id');
+
+                if (entry.isIntersecting) {
+                    // Monta a URL para autoplay, mute, loop
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0`;
+                } else {
+                    // Remove o src para "pausar" o vídeo
+                    iframe.src = '';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        youtubeContainers.forEach(container => iframeObserver.observe(container));
 
     } catch (error) {
         console.error('Erro ao carregar os projetos:', error);
         projectsGrid.innerHTML = '<p>Erro ao carregar projetos. Tente novamente mais tarde.</p>';
     }
 }
-
-async function loadVideos() {
-  const videosGrid = document.getElementById('videos-grid');
-
-  for (let i = 0; i < 3; i++) {
-    const skeleton = document.createElement('div');
-    skeleton.className = 'skeleton-card';
-    skeleton.innerHTML = `
-      <div class="skeleton-icon"></div>
-      <div class="skeleton-title"></div>
-    `;
-    videosGrid.appendChild(skeleton);
-  }
-
-  try {
-    const response = await fetch('videos.json');
-    const videos = await response.json();
-
-    console.log('Vídeos carregados:', videos);
-
-    videosGrid.innerHTML = '';
-
-    videos.forEach(video => {
-      const card = document.createElement('div');
-      card.className = 'video-card';
-      card.onclick = () => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, '_blank');
-
-      card.innerHTML = `
-        <img src="https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg" alt="Thumbnail de ${video.titulo}" class="video-thumbnail">
-        <h3 class="video-youtube-title">${video.titulo}</h3>
-      `;
-
-      videosGrid.appendChild(card);
-    });
-
-  } catch (error) {
-    console.error('Erro ao carregar os vídeos:', error);
-    videosGrid.innerHTML = '<p>Erro ao carregar vídeos. Tente novamente mais tarde.</p>';
-  }
-}
-
 
 async function loadArticles() {
     const articlesGrid = document.getElementById('articles-grid');
@@ -154,7 +183,6 @@ async function loadArticles() {
 // Carregar artigos ao iniciar a página
 document.addEventListener('DOMContentLoaded', () => {
     loadArticles();
-    loadVideos();
     loadProjects();
 });
 const resumeIcon = document.getElementById("resume-icon");
