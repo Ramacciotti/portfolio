@@ -34,7 +34,6 @@ async function loadProjects() {
         projects.forEach(project => {
             const card = document.createElement('div');
             card.className = 'project-card';
-            card.onclick = () => window.open(project.link, '_blank');
 
             const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
@@ -49,7 +48,7 @@ async function loadProjects() {
                             frameborder="0"
                             allow="autoplay; encrypted-media"
                             allowfullscreen
-                            src=""
+                            src="https://www.youtube.com/embed/${project.youtubeID}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeID}&controls=0&modestbranding=1&rel=0"
                         ></iframe>
                     </div>
                 `;
@@ -57,7 +56,7 @@ async function loadProjects() {
             } else if (project.videoURL) {
                 mediaHTML = `
                     <div class="video-thumbnail">
-                        <video src="${project.videoURL}" muted loop playsinline></video>
+                        <video src="${project.videoURL}" autoplay muted loop playsinline></video>
                     </div>
                 `;
                 showIcon = false;
@@ -69,61 +68,31 @@ async function loadProjects() {
                 `;
             }
 
-            // Montar o innerHTML:
-           card.innerHTML = `
-               <div class="card-media">
-                   ${mediaHTML}
-               </div>
-               <div class="card-content">
-                   <h3 class="card-title">${project.titulo}</h3>
-                   ${showIcon ? `<div class="card-icon"><i class="${project.icone}"></i></div>` : ''}
-                   <p class="card-description">${project.descricao}</p>
-                   <div class="tags-container">${tagsHTML}</div>
-                   <div class="card-footer">
-                       <span class="read-more">Ver Projeto no Github</span>
-                       <i class="fas fa-arrow-right"></i>
-                   </div>
-               </div>
-           `;
+            card.innerHTML = `
+                <div class="card-media">
+                    ${mediaHTML}
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">${project.titulo}</h3>
+                    ${showIcon ? `<div class="card-icon"><i class="${project.icone}"></i></div>` : ''}
+                    <p class="card-description">${project.descricao}</p>
+                    <div class="tags-container">${tagsHTML}</div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ramacciotti/${project.github}" target="_blank" rel="noopener noreferrer">
+                           Ver Projeto no Github <i class="fas fa-arrow-right"></i>
+                       </a>
+                       <a href="https://youtube.com/watch?v=${project.youtubeID}" target="_blank" rel="noopener noreferrer">
+                           Ver Projeto no Youtube <i class="fas fa-arrow-right"></i>
+                       </a>
+                    </div>
+                </div>
+            `;
 
             projectsGrid.appendChild(card);
         });
 
-        // IntersectionObserver para vídeos locais
-        const videos = document.querySelectorAll('video');
-
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.play();
-                } else {
-                    entry.target.pause();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        videos.forEach(video => videoObserver.observe(video));
-
-        // IntersectionObserver para iframes YouTube
-        const youtubeContainers = document.querySelectorAll('.youtube-video');
-
-        const iframeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const container = entry.target;
-                const iframe = container.querySelector('iframe');
-                const videoId = container.getAttribute('data-youtube-id');
-
-                if (entry.isIntersecting) {
-                    // Monta a URL para autoplay, mute, loop
-                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0`;
-                } else {
-                    // Remove o src para "pausar" o vídeo
-                    iframe.src = '';
-                }
-            });
-        }, { threshold: 0.5 });
-
-        youtubeContainers.forEach(container => iframeObserver.observe(container));
+        // REMOVIDO: IntersectionObserver para vídeos locais e iframes do YouTube
+        // Todos os vídeos já vão tocar automaticamente e ficar exibidos o tempo todo
 
     } catch (error) {
         console.error('Erro ao carregar os projetos:', error);

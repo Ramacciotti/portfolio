@@ -263,7 +263,7 @@ nav a:hover {
 
 .about-title {
     font-size: 2.5rem;
-    color:#3D3DB8;
+    color: #ee2a5a;
     text-align: center;
     margin-bottom: 5rem;
     animation: fadeIn 1.5s ease-in-out;
@@ -283,7 +283,7 @@ nav a:hover {
 }
 
 .about-text strong {
-    color: white; /* Destaque para palavras-chave */
+    color: white;
 }
 
 
@@ -293,7 +293,7 @@ nav a:hover {
 
 
 .about-skills {
-    background-color: #1e1d2a; /* Fundo mais claro para contraste */
+    background-color: #1e1d2a;
     padding: 2rem;
     border-radius: 10px;
     animation: slideInRight 1s ease-in-out;
@@ -304,7 +304,7 @@ nav a:hover {
 .about-skills h3 {
     text-align: center;
     font-size: 1.5rem;
-    color: white; /* Cor de destaque */
+    color: white;
     margin: 3rem 0 3rem 0;
 }
 
@@ -340,10 +340,10 @@ nav a:hover {
 }
 
 .tag {
-    background-color: #3d3db8; /* Cor de destaque */
+    background-color: #ee2a5a;
     color: white;
     padding: 0.5rem 1rem;
-    border-radius: 20px; /* Bordas arredondadas */
+    border-radius: 20px;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
 }
@@ -516,7 +516,11 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+
   margin-bottom: 25px;
+    justify-content: center; /* garante alinhamento à esquerda */
+    align-items: center;     /* opcional, para alinhar ao topo */
+    text-align: center;
 }
 
 .tags-container .tag {
@@ -564,8 +568,14 @@ nav a:hover {
     color: #303090;
 }
 
-.read-more {
-    font-weight: bold;
+.card-footer a {
+   font-weight: bold;
+   color: #e91e63;
+   text-decoration: none;
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   transition: color 0.3s ease;
 }
 
 .youtube-video iframe {
