@@ -42,6 +42,23 @@
     ]
   },
   {
+    "titulo": "Cadastro e Login de usuários com Spring Security",
+    "descricao": "Aplicativo web de gerenciamento de usuários desenvolvido com Spring Boot. Ele oferece recursos de registro, autenticação e gerenciamento de contas, incluindo alteração de e-mail e senha, além de exclusão de usuários. O frontend é desenvolvido com Thymeleaf, garantindo integração dinâmica e segura com o backend.",
+    "github": "register-login-dashboard-thymeleaf-postgresql",
+    "icone": "fa fa-female",
+    "youtubeID": "TAWPE7xqqBg",
+    "tags": [
+      "java",
+      "mvc",
+      "spring-boot",
+      "maven",
+      "jpa",
+      "postgreql",
+      "hibernate",
+      "thymeleaf"
+    ]
+  },
+  {
     "titulo": "Processamento em Lote de Arquivos Excel",
     "descricao": "Projeto de processamento em lote desenvolvido com Spring Batch para leitura e tratamento de arquivos Excel e CSV, com os dados persistidos em banco de dados MySQL. A aplicação utiliza Java para automação do processamento, garantindo eficiência e escalabilidade na manipulação de grandes volumes de dados.",
     "github": "employee-excel-batch-processing-springboot-mysql",
