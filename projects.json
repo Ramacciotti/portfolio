@@ -17,6 +17,40 @@
     ]
   },
   {
+    "titulo": "Sistema de Filas Assíncronas com Spring Boot e RabbitMQ",
+    "descricao": "Projeto em Java com Spring Boot que implementa comunicação assíncrona usando RabbitMQ. A aplicação gerencia pedidos enviados para uma fila, processa-os com controle de falhas, incluindo Dead Letter Queue para mensagens não processadas. Ideal para sistemas distribuídos que demandam alta confiabilidade e escalabilidade.",
+    "github": "async-order-processing-rabbitmq-producer-consumer-springboot",
+    "icone": "fa fa-server",
+    "youtubeID": "r5fGtNjcEvc",
+    "tags": [
+      "java",
+      "spring-boot",
+      "rabbitmq",
+      "asynchronous",
+      "message-queue",
+      "jpa",
+      "retry",
+      "dead-letter-queue"
+    ]
+  },
+  {
+    "titulo": "Cadastro e Login de usuários com Spring Security",
+    "descricao": "Aplicativo web de gerenciamento de usuários desenvolvido com Spring Boot. Ele oferece recursos de registro, autenticação e gerenciamento de contas, incluindo alteração de e-mail e senha, além de exclusão de usuários. O frontend é desenvolvido com Thymeleaf, garantindo integração dinâmica e segura com o backend.",
+    "github": "register-login-dashboard-thymeleaf-postgresql",
+    "icone": "fa fa-female",
+    "youtubeID": "TAWPE7xqqBg",
+    "tags": [
+      "java",
+      "mvc",
+      "spring-boot",
+      "maven",
+      "jpa",
+      "postgreql",
+      "hibernate",
+      "thymeleaf"
+    ]
+  },
+  {
     "titulo": "Sistema de Gestão de Funcionários",
     "descricao": "Projeto de sistema CRUD para gerenciamento de funcionários, desenvolvido com Spring Boot, Feign Client e PostgreSQL. A aplicação expõe uma API RESTful, utilizando JPA e Hibernate para persistência de dados, com foco em boas práticas de desenvolvimento como testes unitários com JUnit 5, Mockito e cobertura de código com JaCoCo. Gerenciado com Maven, o projeto demonstra integração eficaz entre microsserviços e banco de dados relacional.",
     "github": "employee-crud-rest-feign-springboot-postgresql",
@@ -39,23 +73,6 @@
       "jacoco",
       "hibernate",
       "feign-client"
-    ]
-  },
-  {
-    "titulo": "Cadastro e Login de usuários com Spring Security",
-    "descricao": "Aplicativo web de gerenciamento de usuários desenvolvido com Spring Boot. Ele oferece recursos de registro, autenticação e gerenciamento de contas, incluindo alteração de e-mail e senha, além de exclusão de usuários. O frontend é desenvolvido com Thymeleaf, garantindo integração dinâmica e segura com o backend.",
-    "github": "register-login-dashboard-thymeleaf-postgresql",
-    "icone": "fa fa-female",
-    "youtubeID": "TAWPE7xqqBg",
-    "tags": [
-      "java",
-      "mvc",
-      "spring-boot",
-      "maven",
-      "jpa",
-      "postgreql",
-      "hibernate",
-      "thymeleaf"
     ]
   },
   {
