@@ -101,6 +101,7 @@ nav a:hover {
 #logo img {
     width: 600px;
     height: auto;
+    margin-top: -1px;
     font-family: 'Open-Sans', sans-serif;
 }
 
