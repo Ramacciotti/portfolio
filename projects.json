@@ -6,14 +6,17 @@
     "icone": "fa fa-female",
     "youtubeID": "QRcKssfvLGI",
     "tags": [
+      "grafana",
+      "prometheus",
+      "actuator",
+      "thymeleaf",
       "java",
       "mvc",
       "spring-boot",
       "maven",
       "jpa",
       "mysql",
-      "hibernate",
-      "thymeleaf"
+      "hibernate"
     ]
   },
   {
