@@ -100,6 +100,24 @@
     ]
   },
   {
+    "titulo": "Extensão do Chrome que bloqueia sites de casas de aposta",
+    "descricao": "Uma extensão do Chrome que ajuda os usuários a bloquear e evitar sites de apostas. Redireciona domínios de apostas conhecidos para uma landing page com informações sobre apostas no Brasil. Ideal para quem está tentando parar de jogar.",
+    "github": "no-more-bets-chrome-extention",
+    "icone": "fa fa-female",
+    "youtubeID": "XBRrNrymMRc",
+    "tags": [
+      "extensão",
+      "chrome",
+      "html",
+      "css",
+      "javascript",
+      "bloquear",
+      "apostas",
+      "plataformas",
+      "restringir"
+    ]
+  },
+  {
     "titulo": "Disclosure - Game 3D stealth em Terceira Pessoa",
     "descricao": "DISCLOSURE foi um jogo que desenvolvi para meu TCC no curso de Jogos Digitais na faculdade Impacta Tecnologia em 2018. Fui responsável pela programação (C# - Unity), modelagem 3D (Blender), game design, efeitos sonoros, roteiro, design de personagens, design de interface, web design, tradução para o inglês, pesquisa e contextualização, GDD, plano de marketing, apresentação, divulgação, pós produção, CD e trailer.",
     "icone": "fa fa-window-restore",
