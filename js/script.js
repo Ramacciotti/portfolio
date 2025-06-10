@@ -78,12 +78,18 @@ async function loadProjects() {
                     <p class="card-description">${project.descricao}</p>
                     <div class="tags-container">${tagsHTML}</div>
                     <div class="card-footer">
-                        <a href="https://github.com/ramacciotti/${project.github}" target="_blank" rel="noopener noreferrer">
-                           Ver Projeto no Github <i class="fas fa-arrow-right"></i>
-                       </a>
-                       <a href="https://youtube.com/watch?v=${project.youtubeID}" target="_blank" rel="noopener noreferrer">
-                           Ver Projeto no Youtube <i class="fas fa-arrow-right"></i>
-                       </a>
+                        ${project.github ? `<a href="https://github.com/ramacciotti/${project.github}" target="_blank" rel="noopener noreferrer">
+                           GitHub <i class="fab fa-github"></i>
+                        </a>` : ''}
+                        ${project.youtubeID ? `<a href="https://youtube.com/watch?v=${project.youtubeID}" target="_blank" rel="noopener noreferrer">
+                           YouTube <i class="fab fa-youtube"></i>
+                        </a>` : ''}
+                        ${project.linkedin ? `<a href="${project.linkedin}" target="_blank" rel="noopener noreferrer">
+                           LinkedIn <i class="fab fa-linkedin"></i>
+                        </a>` : ''}
+                        ${project.loja ? `<a href="${project.loja}" target="_blank" rel="noopener noreferrer">
+                           Chrome Store <i class="fab fa-chrome"></i>
+                        </a>` : ''}
                     </div>
                 </div>
             `;
