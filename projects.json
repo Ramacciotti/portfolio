@@ -2,7 +2,7 @@
   {
     "titulo": "Plataforma de Talentos Tech para Mulheres",
     "descricao": "Projeto desenvolvido em Java com Thymeleaf que promove a inclusão e a diversidade no mercado de tecnologia, com foco na valorização da presença feminina. A aplicação permite registrar usuárias e exibir uma lista delas em cards interativos, que ao serem clicados redirecionam para seus perfis no LinkedIn, facilitando a conexão entre mulheres profissionais e oportunidades de trabalho.",
-    "github": "devas-job-plataform-java-springboot-thymeleaf-mysql",
+    "github": "",
     "icone": "fa fa-female",
     "youtubeID": "QRcKssfvLGI",
     "tags": [
@@ -100,11 +100,13 @@
     ]
   },
   {
-    "titulo": "Extensão do Chrome que bloqueia sites de casas de aposta",
+    "titulo": "Extensão Oficial da Chrome WebStore que bloqueia sites de casas de aposta",
     "descricao": "Uma extensão do Chrome que ajuda os usuários a bloquear e evitar sites de apostas. Redireciona domínios de apostas conhecidos para uma landing page com informações sobre apostas no Brasil. Ideal para quem está tentando parar de jogar.",
     "github": "no-more-bets-chrome-extention",
     "icone": "fa fa-female",
-    "youtubeID": "XBRrNrymMRc",
+    "youtubeID": "34hveTa3m2s",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7338186198814711810/",
+    "loja": "https://chromewebstore.google.com/detail/chega-de-apostas-bloquead/cbdbmghlibglpjlfgnkdfmconcgppkcl",
     "tags": [
       "extensão",
       "chrome",
