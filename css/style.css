@@ -189,7 +189,6 @@ nav a:hover {
     color: #EE2A5A;
 }
 
-
 @media (max-width: 768px) {
 
      .mobile-menu {
@@ -237,7 +236,6 @@ nav a:hover {
     }
 
 }
-
 
 @media (max-width: 500px) {
 
@@ -287,11 +285,9 @@ nav a:hover {
     color: white;
 }
 
-
 @keyframes blink {
     50% { border-color: black; }
 }
-
 
 .about-skills {
     background-color: #1e1d2a;
@@ -384,7 +380,6 @@ nav a:hover {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-
 
 @keyframes slideInLeft {
     from {
@@ -929,4 +924,88 @@ nav a:hover {
     100% { background-color: #e0e0e0; }
 }
 
+/* Suport */
 
+.support-section {
+  padding-bottom: 3rem;
+  padding-top: 0rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.support-container {
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.support-text-content {
+  background-color: #ee2a5a; /* cor vibrante para o texto */
+  color: #fff;
+  padding: 2rem 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.support-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.support-text-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.thank-you {
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: auto;
+  color: #fce4ec;
+}
+
+.support-qr-content {
+  flex: 1;
+  background-color: #fff; /* fundo branco para o QR code */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.support-qr-content img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.support-qr-content img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .support-container {
+    flex-direction: column;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+
+  .support-text-content, .support-qr-content {
+    padding: 1.5rem 2rem;
+  }
+
+  .support-title {
+    font-size: 2rem;
+  }
+
+  .support-qr-content img {
+    max-width: 220px;
+  }
+}
