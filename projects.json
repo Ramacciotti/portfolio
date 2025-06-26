@@ -22,7 +22,7 @@
   {
     "titulo": "Sistema de Filas Assíncronas com Spring Boot e RabbitMQ",
     "descricao": "Projeto em Java com Spring Boot que implementa comunicação assíncrona usando RabbitMQ. A aplicação gerencia pedidos enviados para uma fila, processa-os com controle de falhas, incluindo Dead Letter Queue para mensagens não processadas. Ideal para sistemas distribuídos que demandam alta confiabilidade e escalabilidade.",
-    "github": "async-order-processing-rabbitmq-producer-consumer-springboot",
+    "github": "",
     "icone": "fa fa-server",
     "youtubeID": "r5fGtNjcEvc",
     "tags": [
@@ -39,8 +39,8 @@
   {
     "titulo": "Cadastro e Login de usuários com Spring Security",
     "descricao": "Aplicativo web de gerenciamento de usuários desenvolvido com Spring Boot. Ele oferece recursos de registro, autenticação e gerenciamento de contas, incluindo alteração de e-mail e senha, além de exclusão de usuários. O frontend é desenvolvido com Thymeleaf, garantindo integração dinâmica e segura com o backend.",
-    "github": "register-login-dashboard-thymeleaf-postgresql",
     "icone": "fa fa-female",
+    "github": "",
     "youtubeID": "TAWPE7xqqBg",
     "tags": [
       "java",
@@ -56,8 +56,8 @@
   {
     "titulo": "Sistema de Gestão de Funcionários",
     "descricao": "Projeto de sistema CRUD para gerenciamento de funcionários, desenvolvido com Spring Boot, Feign Client e PostgreSQL. A aplicação expõe uma API RESTful, utilizando JPA e Hibernate para persistência de dados, com foco em boas práticas de desenvolvimento como testes unitários com JUnit 5, Mockito e cobertura de código com JaCoCo. Gerenciado com Maven, o projeto demonstra integração eficaz entre microsserviços e banco de dados relacional.",
-    "github": "employee-crud-rest-feign-springboot-postgresql",
     "icone": "fa fa-briefcase",
+    "github": "",
     "youtubeID": "VMVv14_0Jx0",
     "tags": [
       "java",
@@ -81,8 +81,8 @@
   {
     "titulo": "Processamento em Lote de Arquivos Excel",
     "descricao": "Projeto de processamento em lote desenvolvido com Spring Batch para leitura e tratamento de arquivos Excel e CSV, com os dados persistidos em banco de dados MySQL. A aplicação utiliza Java para automação do processamento, garantindo eficiência e escalabilidade na manipulação de grandes volumes de dados.",
-    "github": "employee-excel-batch-processing-springboot-mysql",
     "icone": "fa fa-window-restore",
+    "github": "",
     "youtubeID": "j3mtOBDhNJM",
     "tags": [
       "java",
@@ -102,8 +102,8 @@
   {
     "titulo": "Extensão Oficial da Chrome WebStore que bloqueia sites de casas de aposta",
     "descricao": "Uma extensão do Chrome que ajuda os usuários a bloquear e evitar sites de apostas. Redireciona domínios de apostas conhecidos para uma landing page com informações sobre apostas no Brasil. Ideal para quem está tentando parar de jogar.",
-    "github": "no-more-bets-chrome-extention",
     "icone": "fa fa-female",
+    "github": "",
     "youtubeID": "34hveTa3m2s",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7338186198814711810/",
     "loja": "https://chromewebstore.google.com/detail/chega-de-apostas-bloquead/cbdbmghlibglpjlfgnkdfmconcgppkcl",
@@ -122,6 +122,7 @@
   {
     "titulo": "Disclosure - Game 3D stealth em Terceira Pessoa",
     "descricao": "DISCLOSURE foi um jogo que desenvolvi para meu TCC no curso de Jogos Digitais na faculdade Impacta Tecnologia em 2018. Fui responsável pela programação (C# - Unity), modelagem 3D (Blender), game design, efeitos sonoros, roteiro, design de personagens, design de interface, web design, tradução para o inglês, pesquisa e contextualização, GDD, plano de marketing, apresentação, divulgação, pós produção, CD e trailer.",
+    "github": "",
     "icone": "fa fa-window-restore",
     "youtubeID": "h7fv752nwew",
     "tags": [

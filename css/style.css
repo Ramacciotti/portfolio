@@ -8,10 +8,18 @@ html {
     scroll-behavior: smooth !important;
 }
 
+@font-face {
+  font-family: 'Berlin Sans FB';
+src: url('../fonts/BerlinSansFB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    font-family: 'Open-Sans', sans-serif;
-    background-color: #100F17;
-    color: white;
+  font-family: 'Berlin Sans FB', sans-serif;
+  color: white;
+  background-color: #02002dff;
+  font-weight: 500;
 }
 
 html, body {
@@ -22,7 +30,7 @@ html, body {
 header {
   width: 100vw;
     height: 100vh;
-    background: #100f17;
+    background: #02002dff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +59,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #EE2A5A;
+    color: #ff426c;
     transform: translateY(-3px);
 }
 
@@ -72,7 +80,7 @@ nav a:hover {
     position: absolute;
     top: 50px;
     left: 20px;
-    background: #EE2A5A;
+    background: #ff426c;
     padding: 10px;
     border-radius: 5px;
     z-index: 2;
@@ -150,7 +158,7 @@ nav a:hover {
 }
 
 .line2 h1:first-of-type {
-    color: #EE2A5A;
+    color: #ff426c;
 }
 
 .resume-icon {
@@ -165,7 +173,7 @@ nav a:hover {
 
 .resume-icon:hover {
     transform: scale(1.2);
-    color: #EE2A5A;
+    color: #ff426c;
 }
 
 .social-icons {
@@ -186,7 +194,7 @@ nav a:hover {
 
 .social-icons a:hover {
     transform: scale(1.2);
-    color: #EE2A5A;
+    color: #ff426c;
 }
 
 @media (max-width: 768px) {
@@ -250,8 +258,11 @@ nav a:hover {
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
 .about-section {
-    padding: 4rem 2rem;
-    background-color: #100f17;
+    padding-top: 4rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 0rem;
+    background-color: #02002dff;
     color: white;
 }
 
@@ -262,7 +273,7 @@ nav a:hover {
 
 .about-title {
     font-size: 2.5rem;
-    color: #ee2a5a;
+    color: #ff426c;
     text-align: center;
     margin-bottom: 5rem;
     animation: fadeIn 1.5s ease-in-out;
@@ -290,7 +301,7 @@ nav a:hover {
 }
 
 .about-skills {
-    background-color: #1e1d2a;
+    background-color: #0b0943;
     padding: 2rem;
     border-radius: 10px;
     animation: slideInRight 1s ease-in-out;
@@ -337,7 +348,7 @@ nav a:hover {
 }
 
 .tag {
-    background-color: #ee2a5a;
+    background-color: #ff426c;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -346,7 +357,7 @@ nav a:hover {
 }
 
 .tag:hover {
-    background-color: #ee2a5a; /* Cor ao passar o mouse */
+    background-color: #ff426c; /* Cor ao passar o mouse */
 }
 
 .about-highlights {
@@ -373,7 +384,7 @@ nav a:hover {
 .highlight-card i {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #ee2a5a;
+    color: #ff426c;
 }
 
 .highlight-card h4 {
@@ -422,7 +433,7 @@ nav a:hover {
 /* Estilos da Seção de Artigos */
 .articles-section {
     padding: 4rem 2rem;
-    background-color: #100f17;
+    background-color: #02002dff;
     color: white;
 }
 
@@ -433,7 +444,7 @@ nav a:hover {
 
 .articles-title {
     font-size: 2.5rem;
-    color: #ee2a5a;
+    color: #ff426c;
     text-align: center;
     margin-bottom: 3rem;
     animation: fadeIn 1.5s ease-in-out;
@@ -446,7 +457,7 @@ nav a:hover {
 }
 
 .article-card {
-    background-color: #1e1d2a;
+    background-color: #0b0943;
     border-radius: 10px;
     padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -460,8 +471,11 @@ nav a:hover {
 
 /* Estilos da Seção de Projetos */
 .projects-section {
-    padding: 4rem 2rem;
-    background-color: #100f17;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    background-color: #02002dff;
     color: white;
 }
 
@@ -472,7 +486,7 @@ nav a:hover {
 
 .projects-title {
     font-size: 2.5rem;
-    color: #ee2a5a;
+    color: #ff426c;
     text-align: center;
     margin-bottom: 3rem;
     animation: fadeIn 1.5s ease-in-out;
@@ -485,7 +499,7 @@ nav a:hover {
 }
 
 .project-card {
-     background-color: #1e1d2a;
+     background-color: #0b0943;
        border-radius: 10px;
        padding: 2rem;
        display: flex;
@@ -520,7 +534,7 @@ nav a:hover {
 }
 
 .tags-container .tag {
-  background-color: #ee2a5a;
+  background-color: #ff426c;
   color: white;
   padding: 5px 10px;
   border-radius: 20px;
@@ -531,7 +545,7 @@ nav a:hover {
 .card-icon {
     text-align: center;
     font-size: 2.5rem;
-    color: #ee2a5a;
+    color: #ff426c;
     margin-bottom: 1.5rem;
 }
 
@@ -555,7 +569,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    color: #ee2a5a;
+    color: #ff426c;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
@@ -584,7 +598,7 @@ nav a:hover {
 /* Recomendações */
 .recommendations-title {
     font-size: 2.5rem;
-    color: #ee2a5a;
+    color: white;
     text-align: center;
     margin-bottom: 3rem;
     animation: fadeIn 1.5s ease-in-out;
@@ -595,6 +609,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+background: linear-gradient(to right, #ffd649ff, #ff426cff);
 }
 
 .recommendations-content{
@@ -644,7 +659,7 @@ nav a:hover {
   height: 12px;
   border-radius: 50%;
   border: none;
-  background-color: #ccc;
+  background-color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -661,7 +676,7 @@ nav a:hover {
 /* Seção de Contato */
 .contact-section {
     padding: 4rem 2rem;
-    background-color: #100f17;
+    background-color: #02002dff;
     color: white;
 }
 
@@ -673,7 +688,7 @@ nav a:hover {
 
 .contact-title {
     font-size: 2.5rem;
-    color: #ee2a5a;
+    color: #ff426c;
     margin-bottom: 3rem;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -715,7 +730,7 @@ nav a:hover {
     padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
-    background-color: #ee2a5a;
+    background-color: #ff426c;
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -743,7 +758,7 @@ nav a:hover {
 
 .contact-icons a:hover {
     transform: scale(1.2);
-    color: #ee2a5a;
+    color: #ff426c;
 }
 
 /* Responsividade */
@@ -758,11 +773,10 @@ nav a:hover {
 }
 
 .footer {
-    background-color: #1e1d2a;
+    background-color:#0b0943;
     color: white;
     padding: 3rem 2rem;
     margin-top: 4rem;
-    font-family: 'Open-Sans', sans-serif;
 }
 
 .footer-container {
@@ -775,7 +789,7 @@ nav a:hover {
 
 .footer-about h3 {
     font-size: 1.3rem;
-    color: #ee2a5a;
+    color: #ff426c;
     margin-bottom: 1rem;
 }
 
@@ -789,7 +803,7 @@ nav a:hover {
 .footer-social h4 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #ee2a5a;
+    color: #ff426c;
 }
 
 .footer-links ul {
@@ -808,7 +822,7 @@ nav a:hover {
 }
 
 .footer-links ul li a:hover {
-    color: #ee2a5a;
+    color: #ff426c;
 }
 
 .footer-social .footer-social-icons {
@@ -825,7 +839,7 @@ nav a:hover {
 
 .footer-social .footer-social-icons a:hover {
     transform: scale(1.2);
-    color: #ee2a5a;
+    color: #ff426c;
 }
 
 .footer-bottom {
@@ -942,7 +956,7 @@ nav a:hover {
 }
 
 .support-text-content {
-  background-color: #ee2a5a; /* cor vibrante para o texto */
+background: linear-gradient(to right, #ffd649ff, #ff426cff);
   color: #fff;
   padding: 2rem 2.5rem;
   flex: 1;
