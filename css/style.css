@@ -8,10 +8,18 @@ html {
     scroll-behavior: smooth !important;
 }
 
+@font-face {
+  font-family: 'Berlin Sans FB';
+src: url('../fonts/BerlinSansFB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    font-family: 'Open-Sans', sans-serif;
-    color: white;
-    background-color: #02002dff;
+  font-family: 'Berlin Sans FB', sans-serif;
+  color: white;
+  background-color: #02002dff;
+  font-weight: 500;
 }
 
 html, body {
@@ -590,7 +598,7 @@ nav a:hover {
 /* Recomendações */
 .recommendations-title {
     font-size: 2.5rem;
-    color: #ff426c;
+    color: white;
     text-align: center;
     margin-bottom: 3rem;
     animation: fadeIn 1.5s ease-in-out;
@@ -601,7 +609,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #0b0943;
+background: linear-gradient(to right, #ffd649ff, #ff426cff);
 }
 
 .recommendations-content{
@@ -651,7 +659,7 @@ nav a:hover {
   height: 12px;
   border-radius: 50%;
   border: none;
-  background-color: #ccc;
+  background-color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -769,7 +777,6 @@ nav a:hover {
     color: white;
     padding: 3rem 2rem;
     margin-top: 4rem;
-    font-family: 'Open-Sans', sans-serif;
 }
 
 .footer-container {
