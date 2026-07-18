@@ -12,9 +12,9 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="icon" href="img/favicon.png?v=3" type="image/png">
     <script>
     tailwind.config = {
       darkMode: 'class',
@@ -49,7 +49,7 @@
           <svg x-show="dark"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
         </button>
         <a href="https://www.linkedin.com/in/marianaramacciotti/" target="_blank" class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          Me contrate <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          Entre em Contato <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
         <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mm" aria-label="Toggle menu">
           <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -67,7 +67,7 @@
           <li><a href="index.html#articles" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Artigos</a></li>
         </ul>
       </div>
-      
+
     </header>
 
     <main class="pt-24">
@@ -111,7 +111,7 @@
       <!-- Seção Sobre dedicada -->
       <section id="about" class="max-w-6xl mx-auto px-6 pb-16">
       
-        <div class="rounded-[2.5rem] bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-sm">
+        <div>
           <div class="flex items-center gap-3 mb-6">
             <div class="h-1.5 w-16 rounded-full bg-accent"></div>
             <p class="text-xs uppercase tracking-[0.35em] font-medium text-zinc-500">Sobre</p>
@@ -169,7 +169,7 @@
         <!-- Educação + Tecnologias -->
         <div class="grid gap-6 md:grid-cols-2">
         
-          <div class="rounded-[2rem] border border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+          <div>
             <p class="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-4">Educação</p>
             <div class="space-y-6">
               <div>
@@ -185,7 +185,7 @@
             </div>
           </div>
 
-          <div class="rounded-[2rem] border border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+          <div>
             <p class="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-4">Tecnologias</p>
             <div class="flex flex-wrap gap-2">
               <span class="px-3 py-1.5 rounded-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-200">Java 17/22</span>
@@ -210,6 +210,7 @@
 
     </main>
 
+    <script src="js/script.js"></script>
   </body>
 
 </html>
