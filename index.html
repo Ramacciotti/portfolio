@@ -170,16 +170,23 @@ tailwind.config = {
 
       <section id="work" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
-          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
               <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
               <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Projetos</h2>
             </div>
           </div>
 
+          <div class="flex flex-wrap items-center gap-3 mb-10">
+            <span class="text-sm text-zinc-500 dark:text-zinc-400">Filtrar:</span>
+            <a href="#work" @click.prevent="projectFilter='professional'" :class="projectFilter==='professional' ? 'bg-accent text-white border-transparent' : 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800 hover:border-accent'" class="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors">Profissional</a>
+            <a href="#work" @click.prevent="projectFilter='community'" :class="projectFilter==='community' ? 'bg-accent text-white border-transparent' : 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800 hover:border-accent'" class="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors">Comunidade</a>
+            <a href="#work" @click.prevent="projectFilter='games'" :class="projectFilter==='games' ? 'bg-accent text-white border-transparent' : 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800 hover:border-accent'" class="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors">Games</a>
+          </div>
+
           <div class="grid md:grid-cols-2 gap-6">
 
-            <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe 
                   class="w-full h-full"
@@ -210,7 +217,7 @@ tailwind.config = {
               </div>
             </article>
 
-            <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe 
                   class="w-full h-full"
@@ -239,7 +246,7 @@ tailwind.config = {
               </div>
             </article>
 
-            <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe 
                   class="w-full h-full"
@@ -267,7 +274,7 @@ tailwind.config = {
               </div>
             </article>
 
-            <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe 
                   class="w-full h-full"
@@ -298,7 +305,7 @@ tailwind.config = {
               </div>
             </article>
 
-            <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe 
                   class="w-full h-full"
@@ -328,7 +335,7 @@ tailwind.config = {
               </div>
             </article>
 
-            <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article x-show="projectFilter==='community'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe 
                   class="w-full h-full"
@@ -354,7 +361,7 @@ tailwind.config = {
               </div>
             </article>
 
-            <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article x-show="projectFilter==='games'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe 
                   class="w-full h-full"

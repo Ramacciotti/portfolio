@@ -4,6 +4,7 @@ function app() {
     mm: false,
     sc: false,
     s: 'hero',
+    projectFilter: 'professional',
 
     init() {
       // dark mode
