@@ -1,87 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mariana Ramacciotti - Desenvolvedora Backend Java; trabalha com microsserviços, AWS e boas práticas de desenvolvimento. Confira meus projetos, artigos e habilidades técnicas.">
-<meta name="keywords" content="Desenvolvedora Backend, Java, Microsserviços, AWS, PostgreSQL, Spring Boot, Clean Code, Mariana Ramacciotti, Desenvolvimento de Software">
-<meta name="author" content="Mariana Ramacciotti">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Mariana Ramacciotti - Desenvolvedora Backend">
-<meta property="og:description" content="Portfólio de Mariana Ramacciotti, Desenvolvedora Backend especializada em Java, microsserviços e AWS.">
-<meta property="og:type" content="website">
-<meta name="google-site-verification" content="r-zHIxfd_XKoa976F_Q1f_6xslxMLFR7Ze2aJRFMkGA" />
-<title>Ramacciotti | Backend Developer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mariana Ramacciotti - Desenvolvedora Backend Java; trabalha com microsserviços, AWS e boas práticas de desenvolvimento. Confira meus projetos, artigos e habilidades técnicas." />
+    <meta name="keywords" content="Desenvolvedora Backend, Java, Microsserviços, AWS, PostgreSQL, Spring Boot, Clean Code, Mariana Ramacciotti, Desenvolvimento de Software" />
+    <meta name="author" content="Mariana Ramacciotti" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Mariana Ramacciotti - Desenvolvedora Backend" />
+    <meta property="og:description" content="Portfólio de Mariana Ramacciotti, Desenvolvedora Backend especializada em Java, microsserviços e AWS." />
+    <meta property="og:type" content="website" />
+    <meta name="google-site-verification" content="r-zHIxfd_XKoa976F_Q1f_6xslxMLFR7Ze2aJRFMkGA" />
+    <title>Ramacciotti | Backend Developer</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="img/favicon.png?v=3" type="image/png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/favicon.png?v=3" type="image/png" />
 
-<script>
-tailwind.config = {
-  darkMode: 'class',
-  theme: {
-    extend: {
-      fontFamily: { display: ['Poppins','sans-serif'], body: ['Poppins','sans-serif'] },
-      colors: { accent: '#f15025', 'accent-light': '#ff8f5c' }
-    }
-  }
-}
-</script>
-
-</head>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { display: ["Poppins", "sans-serif"], body: ["Poppins", "sans-serif"] },
+            colors: { accent: "#f15025", "accent-light": "#ff8f5c" },
+          },
+        },
+      };
+    </script>
+  </head>
 
   <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
-
-    <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
-      :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
+    <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
       <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
-
-        <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
-          <img src="./img/logo_oficial_laranja.png" alt="Otti" loading="eager" height="40" width="40" class="inline-block mr-2">
+        <a href="index.html" class="font-display font-bold text-xl tracking-tight relative z-10">
+          <img src="./img/logo_oficial_laranja.png" alt="Otti" loading="eager" height="40" width="40" class="inline-block mr-2" />
         </a>
 
         <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
-          <li><a href="#about"   class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Sobre</a></li>
-          <li><a href="#work"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Projetos</a></li>
-          <li><a href="#services"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Serviços</a></li>
+          <li><a href="#about" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Sobre</a></li>
+          <li><a href="#work" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Projetos</a></li>
+          <li><a href="#services" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Serviços</a></li>
           <li><a href="#reviews" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Recomendações</a></li>
-          <li><a href="#articles"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='articles'?'on !text-zinc-900 dark:!text-white':''">Artigos</a></li>
+          <li><a href="#articles" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='articles'?'on !text-zinc-900 dark:!text-white':''">Artigos</a></li>
         </ul>
 
         <div class="flex items-center gap-3">
-          
           <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark?'Light mode':'Dark mode'">
-            <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-            <svg x-show="dark"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+            <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+            <svg x-show="dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
           </button>
 
           <a href="curriculum.html" target="_blank" class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-            Curriculum <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            Curriculum <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          
+
           <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mm" aria-label="Toggle menu">
-            <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg x-show="mm"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            <svg x-show="mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
         </div>
       </nav>
-      
-      <div x-show="mm" x-cloak
-        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
-        x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
-        class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+
+      <div x-show="mm" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
         <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
-          <li><a href="#about"   @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Sobre</a></li>
-          <li><a href="#work"     @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projetos</a></li>
+          <li><a href="#about" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Sobre</a></li>
+          <li><a href="#work" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projetos</a></li>
           <li><a href="#services" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Serviços</a></li>
           <li><a href="#reviews" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Recomendações</a></li>
-          <li><a href="#articles"    @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Artigos</a></li>
+          <li><a href="#articles" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Artigos</a></li>
           <li><a href="curriculum.html" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Curriculum</a></li>
           <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
             <a href="https://www.linkedin.com/in/marianaramacciotti/" target="_blank" @click="mm=false" class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Me Contrate →</a>
@@ -91,25 +83,19 @@ tailwind.config = {
     </header>
 
     <main>
-
       <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
         <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
         <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
         <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
           <div class="grid md:grid-cols-2 gap-12 items-center">
-
             <div>
-              <h1 class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
-                Mariana <span class="text-accent">Ramacciotti</span>
-              </h1>
-              <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
-                Desenvolvedora <strong class="font-medium text-zinc-700 dark:text-zinc-300">Backend Java</strong> que constrói sistemas com código <strong class="font-medium text-zinc-700 dark:text-zinc-300">legível, eficiente e de fácil manutenção</strong></strong>. 
-              </p>
+              <h1 class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">Mariana <span class="text-accent">Ramacciotti</span></h1>
+              <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">Desenvolvedora <strong class="font-medium text-zinc-700 dark:text-zinc-300">Backend Java</strong> que constrói sistemas com código <strong class="font-medium text-zinc-700 dark:text-zinc-300">legível, eficiente e de fácil manutenção</strong>.</p>
               <div class="reveal d3 flex flex-wrap gap-4">
                 <a href="#work" class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
                   Confira meus Projetos
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                 </a>
                 <a href="https://www.linkedin.com/in/marianaramacciotti/" target="_blank" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Entre em Contato</a>
               </div>
@@ -118,14 +104,13 @@ tailwind.config = {
             <div class="reveal d2 flex justify-center md:justify-end">
               <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
                 <div class="pf w-full h-full rounded-3xl">
-                  <img src="./img/oficial.jpg" alt="Mariana Ramacciotti | Desenvolvedora Backend Java" loading="eager">
+                  <img src="./img/oficial.jpg" alt="Mariana Ramacciotti | Desenvolvedora Backend Java" loading="eager" />
                 </div>
                 <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">
-                  <img src="./img/logo_oficial_branco.png" alt="Otti" loading="eager" height="30" width="30">
+                  <img src="./img/logo_oficial_branco.png" alt="Otti" loading="eager" height="30" width="30" />
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -133,22 +118,18 @@ tailwind.config = {
       <section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
         <div class="max-w-6xl mx-auto px-6">
           <div class="grid md:grid-cols-2 gap-16 items-center">
-
             <div class="reveal order-2 md:order-1">
-              <div class="pf w-full aspect-square max-w-sm mx-auto rounded-3xl">
-                <img src="./img/oficial2.jpg" alt="Mariana Ramacciotti" loading="lazy">
+              <div class="pf w-full max-w-md mx-auto rounded-3xl overflow-hidden">
+                <img src="./img/oficial2.jpg" alt="Mariana Ramacciotti" loading="lazy" class="w-full h-auto object-cover" />
               </div>
             </div>
 
             <div class="order-1 md:order-2">
               <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Sobre Mim</p>
-              <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">Um pouco sobre<br>quem eu sou</h2>
-              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-                Desenvolvedora Java Pleno com mais de 4 anos de experiência em back-end com Spring Boot, microsserviços, APIs REST e AWS. Minha trajetória inclui passagens por instituições como Itaú, BTG Pactual, Midway e Vinci Partners, onde desenvolvi soluções para gestão de parcerias, onboarding, open banking e previdência privada; sempre com foco em código limpo e boas práticas.
-              </p>
-              <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
-                Tenho grande apreço por transformar complexidade técnica e de negócio em documentação acessível, garantindo que o conhecimento do produto e da tecnologia seja um ativo compartilhado entre toda a equipe e comunidade.
-              </p>
+              <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">Um pouco sobre<br />quem eu sou</h2>
+              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Desenvolvedora Java com mais de 4 anos de experiência em back-end com Spring Boot, microsserviços, APIs REST e AWS.</p>
+              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Minha trajetória inclui passagens por instituições como Itaú, BTG Pactual, Midway e Vinci Partners, onde desenvolvi soluções para gestão de parcerias, onboarding, open banking e previdência privada; sempre com foco em código limpo e boas práticas.</p>
+              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Como profissional autista, trago uma perspectiva única para resolução de problemas: pensamento sistêmico, atenção profunda aos detalhes e uma capacidade natural de identificar padrões e inconsistências. Essas características me permitem criar documentação clara e estruturas bem organizadas que beneficiam toda a equipe.</p>
               <div class="reveal d4">
                 <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack &amp; Ferramentas</p>
                 <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
@@ -163,7 +144,6 @@ tailwind.config = {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -185,17 +165,9 @@ tailwind.config = {
           </div>
 
           <div class="grid md:grid-cols-2 gap-6">
-
             <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
-                <iframe 
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/QRcKssfvLGI?autoplay=1&mute=0&controls=1&loop=1&playlist=QRcKssfvLGI"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/QRcKssfvLGI?autoplay=1&mute=0&controls=1&loop=1&playlist=QRcKssfvLGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
               <div class="p-7">
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -213,20 +185,16 @@ tailwind.config = {
                 <a href="https://www.youtube.com/embed/QRcKssfvLGI?autoplay=1&mute=0&controls=1&loop=1&playlist=QRcKssfvLGI" target="_blank">
                   <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Plataforma de Talentos Tech para Mulheres</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Projeto desenvolvido em Java com Thymeleaf que promove a inclusão e a diversidade no mercado de tecnologia, com foco na valorização da presença feminina. <br/><br/> A aplicação permite registrar usuárias e exibir uma lista delas em cards interativos, que ao serem clicados redirecionam para seus perfis no LinkedIn, facilitando a conexão entre mulheres profissionais e oportunidades de trabalho.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">
+                  Projeto desenvolvido em Java com Thymeleaf que promove a inclusão e a diversidade no mercado de tecnologia, com foco na valorização da presença feminina. <br /><br />
+                  A aplicação permite registrar usuárias e exibir uma lista delas em cards interativos, que ao serem clicados redirecionam para seus perfis no LinkedIn, facilitando a conexão entre mulheres profissionais e oportunidades de trabalho.
+                </p>
               </div>
             </article>
 
             <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
-                <iframe 
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/r5fGtNjcEvc?autoplay=1&mute=0&controls=1&loop=1&playlist=r5fGtNjcEvc"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/r5fGtNjcEvc?autoplay=1&mute=0&controls=1&loop=1&playlist=r5fGtNjcEvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
               <div class="p-7">
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -242,20 +210,16 @@ tailwind.config = {
                 <a href="https://www.youtube.com/embed/r5fGtNjcEvc?autoplay=1&mute=0&controls=1&loop=1&playlist=r5fGtNjcEvc" target="_blank">
                   <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Sistema de Filas Assíncronas com Spring Boot e RabbitMQ</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Projeto em Java com Spring Boot que implementa comunicação assíncrona usando RabbitMQ. A aplicação gerencia pedidos enviados para uma fila, processa-os com controle de falhas, incluindo Dead Letter Queue para mensagens não processadas. <br/><br/> Ideal para sistemas distribuídos que demandam alta confiabilidade e escalabilidade.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">
+                  Projeto em Java com Spring Boot que implementa comunicação assíncrona usando RabbitMQ. A aplicação gerencia pedidos enviados para uma fila, processa-os com controle de falhas, incluindo Dead Letter Queue para mensagens não processadas. <br /><br />
+                  Ideal para sistemas distribuídos que demandam alta confiabilidade e escalabilidade.
+                </p>
               </div>
             </article>
 
             <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
-                <iframe 
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/TAWPE7xqqBg?autoplay=1&mute=1&controls=1&loop=1&playlist=TAWPE7xqqBg"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/TAWPE7xqqBg?autoplay=1&mute=1&controls=1&loop=1&playlist=TAWPE7xqqBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
               <div class="p-7">
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -276,14 +240,7 @@ tailwind.config = {
 
             <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
-                <iframe 
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/VMVv14_0Jx0?autoplay=1&mute=1&controls=1&loop=1&playlist=VMVv14_0Jx0"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/VMVv14_0Jx0?autoplay=1&mute=1&controls=1&loop=1&playlist=VMVv14_0Jx0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
               <div class="p-7">
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -301,20 +258,13 @@ tailwind.config = {
                 <a href="https://www.youtube.com/embed/VMVv14_0Jx0?autoplay=1&mute=1&controls=1&loop=1&playlist=VMVv14_0Jx0" target="_blank">
                   <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Sistema de Gestão de Funcionários</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Projeto de sistema CRUD para gerenciamento de funcionários, desenvolvido com Spring Boot, Feign Client e PostgreSQL.<br/><br/>A aplicação expõe uma API RESTful, utilizando JPA e Hibernate para persistência de dados, com foco em boas práticas de desenvolvimento como testes unitários com JUnit 5, Mockito e cobertura de código com JaCoCo. Gerenciado com Maven, o projeto demonstra integração eficaz entre microsserviços e banco de dados relacional.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Projeto de sistema CRUD para gerenciamento de funcionários, desenvolvido com Spring Boot, Feign Client e PostgreSQL.<br /><br />A aplicação expõe uma API RESTful, utilizando JPA e Hibernate para persistência de dados, com foco em boas práticas de desenvolvimento como testes unitários com JUnit 5, Mockito e cobertura de código com JaCoCo. Gerenciado com Maven, o projeto demonstra integração eficaz entre microsserviços e banco de dados relacional.</p>
               </div>
             </article>
 
             <article x-show="projectFilter==='professional'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
-                <iframe 
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/j3mtOBDhNJM?autoplay=1&mute=1&controls=1&loop=1&playlist=j3mtOBDhNJM"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/j3mtOBDhNJM?autoplay=1&mute=1&controls=1&loop=1&playlist=j3mtOBDhNJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
               <div class="p-7">
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -331,20 +281,16 @@ tailwind.config = {
                 <a href="https://www.youtube.com/embed/j3mtOBDhNJM?autoplay=1&mute=1&controls=1&loop=1&playlist=j3mtOBDhNJM" target="_blank">
                   <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Processamento em Lote de Arquivos Excel</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Projeto de processamento em lote desenvolvido com Spring Batch para leitura e tratamento de arquivos Excel e CSV, com os dados persistidos em banco de dados MySQL. <br/><br/> A aplicação utiliza Java para automação do processamento, garantindo eficiência e escalabilidade na manipulação de grandes volumes de dados.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">
+                  Projeto de processamento em lote desenvolvido com Spring Batch para leitura e tratamento de arquivos Excel e CSV, com os dados persistidos em banco de dados MySQL. <br /><br />
+                  A aplicação utiliza Java para automação do processamento, garantindo eficiência e escalabilidade na manipulação de grandes volumes de dados.
+                </p>
               </div>
             </article>
 
             <article x-show="projectFilter==='community'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
-                <iframe 
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/34hveTa3m2s?autoplay=1&mute=1&controls=1&loop=1&playlist=34hveTa3m2s"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/jSgTd_6SzEA?si=LMYGVOKqyg5PgdGe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
               <div class="p-7">
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -354,23 +300,16 @@ tailwind.config = {
                   <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">CSS</span>
                   <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Javascript</span>
                 </div>
-                <a href="https://www.youtube.com/embed/34hveTa3m2s?autoplay=1&mute=1&controls=1&loop=1&playlist=34hveTa3m2s" target="_blank">
-                  <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Extensão Oficial da Chrome WebStore que bloqueia sites de casas de aposta</h3>
+                <a href="chrome-extention-no-more-bets.html">
+                  <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Extensão do Chrome que bloqueia sites de casas de aposta</h3>
                 </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Uma extensão do Chrome que ajuda os usuários a bloquear e evitar sites de apostas. Redireciona domínios de apostas conhecidos para uma landing page com informações sobre apostas no Brasil. Ideal para quem está tentando parar de jogar.</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Uma que ajuda os usuários a bloquear e evitar sites de apostas. Redireciona domínios de apostas conhecidos para uma landing page com informações sobre apostas no Brasil. Ideal para quem está tentando parar de jogar.</p>
               </div>
             </article>
 
             <article x-show="projectFilter==='games'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
-                <iframe 
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/h7fv752nwew?autoplay=1&mute=1&controls=1&loop=1&playlist=h7fv752nwew"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/h7fv752nwew?autoplay=1&mute=1&controls=1&loop=1&playlist=h7fv752nwew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
               <div class="p-7">
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -390,11 +329,10 @@ tailwind.config = {
                 <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">DISCLOSURE foi um jogo que desenvolvi para meu TCC no curso de Jogos Digitais na faculdade Impacta Tecnologia em 2018. Fui responsável pela programação (C# - Unity), modelagem 3D (Blender), game design, efeitos sonoros, roteiro, design de personagens, design de interface, web design, tradução para o inglês, pesquisa e contextualização, GDD, plano de marketing, apresentação, divulgação, pós produção, CD e trailer.</p>
               </div>
             </article>
-
           </div>
         </div>
       </section>
-      
+
       <section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
         <div class="max-w-6xl mx-auto px-6">
           <div class="mb-14">
@@ -402,10 +340,9 @@ tailwind.config = {
             <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Serviços</h2>
           </div>
           <div class="grid md:grid-cols-3 gap-6">
-
             <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
               <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" /></svg>
               </div>
               <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Documentação</h3>
               <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Criação e manutenção de documentações técnicas e de negócio para projetos de software, garantindo clareza e acessibilidade para toda a comunidade.</p>
@@ -413,7 +350,7 @@ tailwind.config = {
 
             <article class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
               <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
               </div>
               <h3 class="font-display font-bold text-xl text-white mb-3">APIS RESTful</h3>
               <p class="text-sm text-zinc-400 leading-relaxed">Manutenção e evolução de microsserviços RESTful, garantindo alta disponibilidade, desempenho e escalabilidade em ambientes de produção.</p>
@@ -421,12 +358,14 @@ tailwind.config = {
 
             <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
               <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                </svg>
               </div>
               <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Ecossistema AWS</h3>
               <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Orquestro a comunicação com BFFs, Lambdas e Step Functions para entregar os fluxos de ponta a ponta.</p>
             </article>
-
           </div>
         </div>
       </section>
@@ -439,18 +378,17 @@ tailwind.config = {
           </div>
 
           <div class="grid md:grid-cols-3 gap-6">
-
             <blockquote class="reveal d1 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
               <div class="flex gap-0.5 mb-5" aria-label="5 stars">
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
               </div>
               <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Mari é uma das profissionais mais proativas e criticas quando assunto é Clean Code / Arquitetura, sua postura resultou em mudanças de processos, melhoria nas documentações e consequentemente uma base de código mais confiavel e segura, e se não bastasse é uma das melhores pessoas para se ter em uma equipe, aberta a ouvir, pronta a ajudar, educata, parceira de verdade. É uma grande honra ter atuado do seu lado Mari."</p>
               <footer class="flex items-center gap-3">
-                <div class="pf w-10 h-10 rounded-full shrink-0"><img src="https://media.licdn.com/dms/image/v2/D4D03AQGjLaWKtKO9OA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1704210447854?e=1785974400&v=beta&t=IC9_c8KnMl7VtiZqf8PltPFYKsjpQEtH8a41ZnCD74s" alt="Bruno Brito" loading="lazy"></div>
+                <div class="pf w-10 h-10 rounded-full shrink-0"><img src="https://media.licdn.com/dms/image/v2/D4D03AQGjLaWKtKO9OA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1704210447854?e=1785974400&v=beta&t=IC9_c8KnMl7VtiZqf8PltPFYKsjpQEtH8a41ZnCD74s" alt="Bruno Brito" loading="lazy" /></div>
                 <div>
                   <p class="font-medium text-sm text-zinc-900 dark:text-white">Bruno Brito</p>
                   <p class="text-xs text-zinc-500">Senior Software Engineer</p>
@@ -460,15 +398,15 @@ tailwind.config = {
 
             <blockquote class="reveal d2 bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-7 border border-zinc-800">
               <div class="flex gap-0.5 mb-5" aria-label="5 stars">
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
               </div>
-              <p class="text-zinc-400 text-sm leading-relaxed mb-6 italic">"Tenho o prazer de trabalhar com Mariana Ramacciotti  e posso afirmar que ela é uma profissional altamente competente e dedicada. Como Desenvolvedora Backend Java Pleno, ela demonstra profundo conhecimento em microsserviços, utilizando Spring Boot para criar soluções escaláveis e bem estruturadas. Além disso, sua habilidade na construção de APIs RESTful garante que as integrações sejam eficientes e bem documentadas."</p>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-6 italic">"Tenho o prazer de trabalhar com Mariana Ramacciotti e posso afirmar que ela é uma profissional altamente competente e dedicada. Como Desenvolvedora Backend Java Pleno, ela demonstra profundo conhecimento em microsserviços, utilizando Spring Boot para criar soluções escaláveis e bem estruturadas. Além disso, sua habilidade na construção de APIs RESTful garante que as integrações sejam eficientes e bem documentadas."</p>
               <footer class="flex items-center gap-3">
-                <div class="pf w-10 h-10 rounded-full shrink-0"><img src="https://media.licdn.com/dms/image/v2/D4D03AQGsllKhI5ivfg/profile-displayphoto-scale_100_100/B4DZ7Rz_0_IsAY-/0/1781636531261?e=1785974400&v=beta&t=AaNOTy2FPgWXM8VPrnE4oW7hpLac04lSiMMANu13lgo" alt="Kamila Reis" loading="lazy"></div>
+                <div class="pf w-10 h-10 rounded-full shrink-0"><img src="https://media.licdn.com/dms/image/v2/D4D03AQGsllKhI5ivfg/profile-displayphoto-scale_100_100/B4DZ7Rz_0_IsAY-/0/1781636531261?e=1785974400&v=beta&t=AaNOTy2FPgWXM8VPrnE4oW7hpLac04lSiMMANu13lgo" alt="Kamila Reis" loading="lazy" /></div>
                 <div>
                   <p class="font-medium text-sm text-white">Kamila Reis</p>
                   <p class="text-xs text-zinc-500">Senior Mobile Software Engineer</p>
@@ -478,22 +416,21 @@ tailwind.config = {
 
             <blockquote class="reveal d3 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
               <div class="flex gap-0.5 mb-5" aria-label="5 stars">
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
               </div>
               <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Mari tem sido uma profissional com o seu foco e atenção aos detalhes garantem resultados de alta qualidade em todas as tarefas que executa, tem se mostrado bastante dedicada a aprimorar as práticas de desenvolvimento, é uma pessoa que gosto muito de trabalhar."</p>
               <footer class="flex items-center gap-3">
-                <div class="pf w-10 h-10 rounded-full shrink-0"><img src="https://media.licdn.com/dms/image/v2/D4D03AQF7xSQI764aGg/profile-displayphoto-scale_100_100/B4DZ5f_SsdG4Ac-/0/1779726891929?e=1785974400&v=beta&t=pRmUBSIxAUZwnXTQclGMEB68JXBL4z_6fF0UADOC_4Q" alt="Karla Vieira" loading="lazy"></div>
+                <div class="pf w-10 h-10 rounded-full shrink-0"><img src="https://media.licdn.com/dms/image/v2/D4D03AQF7xSQI764aGg/profile-displayphoto-scale_100_100/B4DZ5f_SsdG4Ac-/0/1779726891929?e=1785974400&v=beta&t=pRmUBSIxAUZwnXTQclGMEB68JXBL4z_6fF0UADOC_4Q" alt="Karla Vieira" loading="lazy" /></div>
                 <div>
                   <p class="font-medium text-sm text-zinc-900 dark:text-white">Karla Vieira</p>
                   <p class="text-xs text-zinc-500">Senior Product Manager</p>
                 </div>
               </footer>
             </blockquote>
-
           </div>
         </div>
       </section>
@@ -509,10 +446,9 @@ tailwind.config = {
           </div>
 
           <div class="grid md:grid-cols-3 gap-6">
-
             <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
               <div class="pf w-full h-44">
-                <img src="https://media.licdn.com/dms/image/v2/D4D12AQEgCnjcNQlyBQ/article-cover_image-shrink_720_1280/B4DZ2_hCP1GQAI-/0/1777034602604?e=1785974400&v=beta&t=1aQ5pSb5qr8yj1xFnFRJ0AmEyfveYK8amwI6YLNGBho" alt="Introdução ao Datadog" loading="lazy">
+                <img src="https://media.licdn.com/dms/image/v2/D4D12AQEgCnjcNQlyBQ/article-cover_image-shrink_720_1280/B4DZ2_hCP1GQAI-/0/1777034602604?e=1785974400&v=beta&t=1aQ5pSb5qr8yj1xFnFRJ0AmEyfveYK8amwI6YLNGBho" alt="Introdução ao Datadog" loading="lazy" />
               </div>
               <div class="p-6">
                 <div class="flex items-center gap-3 mb-3">
@@ -529,7 +465,7 @@ tailwind.config = {
 
             <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
               <div class="pf w-full h-44">
-                <img src="https://media.licdn.com/dms/image/v2/D4E12AQHi1Jq7yj8PkA/article-cover_image-shrink_720_1280/B4EZUo625XGwAI-/0/1740148274133?e=1785974400&v=beta&t=E5DiMpEZ1zcLcpHKJi1xqWZRzonf_UjwYea15MU2u8g" alt="Mensagens Síncronas x Assíncronas" loading="lazy">
+                <img src="https://media.licdn.com/dms/image/v2/D4E12AQHi1Jq7yj8PkA/article-cover_image-shrink_720_1280/B4EZUo625XGwAI-/0/1740148274133?e=1785974400&v=beta&t=E5DiMpEZ1zcLcpHKJi1xqWZRzonf_UjwYea15MU2u8g" alt="Mensagens Síncronas x Assíncronas" loading="lazy" />
               </div>
               <div class="p-6">
                 <div class="flex items-center gap-3 mb-3">
@@ -546,7 +482,7 @@ tailwind.config = {
 
             <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
               <div class="pf w-full h-44">
-                <img src="https://media.licdn.com/dms/image/v2/D4D12AQEa-BPDA1Qx4w/article-cover_image-shrink_720_1280/B4DZUEzJnCHkAI-/0/1739542273462?e=1785974400&v=beta&t=zK2whqPM7CmtxXYUVqcq2pH6uK2AafKQ4rL7A3tblcg" alt="Boas Práticas no Desenvolvimento de Microsserviços com Java e Spring Boot" loading="lazy">
+                <img src="https://media.licdn.com/dms/image/v2/D4D12AQEa-BPDA1Qx4w/article-cover_image-shrink_720_1280/B4DZUEzJnCHkAI-/0/1739542273462?e=1785974400&v=beta&t=zK2whqPM7CmtxXYUVqcq2pH6uK2AafKQ4rL7A3tblcg" alt="Boas Práticas no Desenvolvimento de Microsserviços com Java e Spring Boot" loading="lazy" />
               </div>
               <div class="p-6">
                 <div class="flex items-center gap-3 mb-3">
@@ -560,17 +496,19 @@ tailwind.config = {
                 <a href="https://www.linkedin.com/pulse/boas-pr%25C3%25A1ticas-desenvolvimento-de-microsservi%25C3%25A7os-com-java-ramacciotti-cudzf/?trackingId=B8OcEShmRBCx%2FTwAutYyXQ%3D%3D" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Leia Mais →</a>
               </div>
             </article>
-
           </div>
         </div>
       </section>
-
     </main>
 
     <footer class="border-t border-zinc-100 dark:border-zinc-900">
       <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-sm text-zinc-400">© <span id="yr"></span> Todos os direitos reservados. <br> Desenvolvido por <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a> • Distribuído por<a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a></p>
-        <p class="text-xs text-zinc-500">Construído com
+        <p class="text-sm text-zinc-400">
+          © <span id="yr"></span> Todos os direitos reservados. <br />
+          Desenvolvido por <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a> • Distribuído por<a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a>
+        </p>
+        <p class="text-xs text-zinc-500">
+          Construído com
           <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Tailwind CSS</a>
           &amp;
           <a href="https://alpinejs.dev" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Alpine.js</a>
@@ -578,8 +516,6 @@ tailwind.config = {
       </div>
     </footer>
 
-    <script src="js/script.js">
-    </script>
-
+    <script src="js/script.js"></script>
   </body>
 </html>

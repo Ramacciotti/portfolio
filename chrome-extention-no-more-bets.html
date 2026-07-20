@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mariana Ramacciotti - Desenvolvedora Backend Java; trabalha com microsserviços, AWS e boas práticas de desenvolvimento. Confira meus projetos, artigos e habilidades técnicas." />
+    <meta name="keywords" content="Desenvolvedora Backend, Java, Microsserviços, AWS, PostgreSQL, Spring Boot, Clean Code, Mariana Ramacciotti, Desenvolvimento de Software" />
+    <meta name="author" content="Mariana Ramacciotti" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Mariana Ramacciotti - Desenvolvedora Backend" />
+    <meta property="og:description" content="Portfólio de Mariana Ramacciotti, Desenvolvedora Backend especializada em Java, microsserviços e AWS." />
+    <meta property="og:type" content="website" />
+    <meta name="google-site-verification" content="r-zHIxfd_XKoa976F_Q1f_6xslxMLFR7Ze2aJRFMkGA" />
+    <title>Ramacciotti | Chega de Apostas!</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/favicon.png?v=3" type="image/png" />
+
+    <style>
+      #hero {
+        position: relative;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        padding-top: 64px;
+        overflow: hidden;
+      }
+
+      /* Blur decorativo */
+      #hero .bg-accent\/10 {
+        background: rgba(241, 80, 37, 0.08);
+      }
+
+      /* Badge de demonstração animado */
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.8);
+        }
+      }
+      .animate-pulse {
+        animation: pulse-dot 1.5s ease-in-out infinite;
+      }
+
+      /* Sombra do vídeo */
+      .shadow-2xl {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+      .shadow-accent\/10 {
+        box-shadow: 0 25px 50px -12px rgba(241, 80, 37, 0.15);
+      }
+      .dark .shadow-accent\/10 {
+        box-shadow: 0 25px 50px -12px rgba(241, 80, 37, 0.08);
+      }
+
+      /* Responsividade do vídeo */
+      .aspect-video {
+        aspect-ratio: 16 / 9;
+      }
+
+      /* Badge flutuante */
+      #hero .absolute.-bottom-3.-right-3 {
+        transform: translate(4px, 4px);
+      }
+
+      /* Efeito de hover no container do vídeo */
+      #hero .rounded-2xl {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      #hero .rounded-2xl:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 30px 60px -15px rgba(241, 80, 37, 0.2);
+      }
+      .dark #hero .rounded-2xl:hover {
+        box-shadow: 0 30px 60px -15px rgba(241, 80, 37, 0.1);
+      }
+
+      /* Badge de "Projeto Aplicado" */
+      #hero .border-accent\/20 {
+        border-color: rgba(241, 80, 37, 0.2);
+      }
+
+      /* Responsivo: tablet e mobile */
+      @media (max-width: 768px) {
+        #hero {
+          min-height: 50vh;
+          padding-top: 56px;
+        }
+        #hero .grid {
+          gap: 32px;
+        }
+        #hero h1 {
+          font-size: 28px;
+        }
+        #hero .max-w-sm {
+          max-width: 100%;
+        }
+        #hero .absolute.-bottom-3.-right-3 {
+          transform: none;
+          position: relative;
+          bottom: auto;
+          right: auto;
+          margin-top: -12px;
+          margin-left: auto;
+          width: fit-content;
+        }
+        #hero .rounded-2xl {
+          border-radius: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #hero {
+          min-height: auto;
+          padding: 72px 0 40px 0;
+        }
+        #hero h1 {
+          font-size: 24px;
+        }
+        #hero .flex-wrap {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        #hero .flex-wrap a {
+          text-align: center;
+          justify-content: center;
+        }
+        #hero .flex-wrap a:first-child {
+          order: 2;
+        }
+        #hero .flex-wrap a:last-child {
+          order: 1;
+        }
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+            colors: { accent: "#f15025", "accent-light": "#ff8f5c" },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
+      <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+        <a href="index.html" class="font-display font-bold text-xl tracking-tight relative z-10">
+          <img src="./img/logo_oficial_laranja.png" alt="Otti" loading="eager" height="40" width="40" class="inline-block mr-2" />
+        </a>
+
+        <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
+          <li><a href="/index.html#about" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Sobre</a></li>
+          <li><a href="/index.html#work" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Projetos</a></li>
+          <li><a href="/index.html#services" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Serviços</a></li>
+          <li><a href="/index.html#reviews" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Recomendações</a></li>
+          <li><a href="/index.html#articles" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='articles'?'on !text-zinc-900 dark:!text-white':''">Artigos</a></li>
+        </ul>
+
+        <div class="flex items-center gap-3">
+          <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark?'Light mode':'Dark mode'">
+            <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+            <svg x-show="dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+          </button>
+
+          <a href="curriculum.html" target="_blank" class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
+            Curriculum <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+
+          <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mm" aria-label="Toggle menu">
+            <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            <svg x-show="mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+      </nav>
+
+      <div x-show="mm" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+        <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
+          <li><a href="/index.html#about" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Sobre</a></li>
+          <li><a href="/index.html#work" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projetos</a></li>
+          <li><a href="/index.html#services" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Serviços</a></li>
+          <li><a href="/index.html#reviews" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Recomendações</a></li>
+          <li><a href="/index.html#articles" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Artigos</a></li>
+          <li><a href="curriculum.html" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Curriculum</a></li>
+          <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
+            <a href="https://www.linkedin.com/in/marianaramacciotti/" target="_blank" @click="mm=false" class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Me Contrate →</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== HERO ===== -->
+      <section id="hero" class="relative min-h-[60vh] flex items-center pt-16 overflow-hidden">
+        <!-- Elementos decorativos de fundo -->
+        <div class="absolute top-1/3 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-24 w-full">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Coluna da esquerda: Título, subtítulo e CTA -->
+            <div>
+              <span class="inline-block text-xs font-medium text-accent tracking-widest uppercase mb-4 border border-accent/20 px-4 py-1.5 rounded-full"> Extensão Desktop </span>
+              <h1 class="reveal d1 font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-zinc-900 dark:text-white mb-6">Chega de<br /><span class="text-accent">Apostas!</span></h1>
+              <p class="reveal d2 text-base md:text-lg text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-8">Extensão para bloquear sites de casas de aposta e ajudar na prevenção do jogo problemático.</p>
+              <div class="reveal d3 flex flex-wrap gap-4">
+                <a href="https://chromewebstore.google.com/detail/chega-de-apostas-bloquead/cbdbmghlibglpjlfgnkdfmconcgppkcl?authuser=0&hl=pt-BR" class="shimmer inline-flex items-center gap-2 bg-accent text-white font-medium px-7 py-3.5 rounded-full hover:bg-accent-light transition-colors text-sm" target="_blank" rel="noopener noreferrer"> Ver Extensão no Google </a>
+                <a href="https://github.com/Ramacciotti/no-more-bets-chrome-extention" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm" target="_blank" rel="noopener noreferrer"> Ver Github do Projeto </a>
+              </div>
+            </div>
+
+            <!-- Coluna da direita: Vídeo (menor, com moldura) -->
+            <div class="reveal d2 flex justify-center md:justify-end">
+              <div class="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
+                <!-- Moldura/container do vídeo -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-accent/10 dark:shadow-accent/5 border-2 border-accent/20 dark:border-accent/10 bg-zinc-900">
+                  <!-- Vídeo com proporção 16:9 -->
+                  <div class="aspect-video relative">
+                    <iframe src="https://www.youtube.com/embed/jSgTd_6SzEA?si=LMYGVOKqyg5PgdGe" title="Vídeo demonstrativo da extensão Levante-se!" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0 w-full h-full" loading="lazy"> </iframe>
+                  </div>
+                </div>
+
+                <!-- Mini indicadores -->
+                <div class="flex items-center justify-center gap-6 mt-4 text-xs text-zinc-400">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    Chrome
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    Edge
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    Manifest V3
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== DESAFIO ===== -->
+      <section id="desafio" class="py-20 bg-white dark:bg-zinc-950">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-1">
+              <span class="text-xs font-medium text-accent tracking-widest uppercase border border-accent/20 px-4 py-1.5 rounded-full">01</span>
+              <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mt-4 sticky top-24">Desafio</h3>
+            </div>
+
+            <div class="md:col-span-4 space-y-6">
+              <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
+                As casas de apostas gastam milhões em
+                <strong class="text-zinc-800 dark:text-zinc-200">psicólogos e designers</strong>
+                para criar mecanismos que viciam os usuários. Pessoas vulneráveis como jovens, endividados e neurodivergentes; são
+                <strong class="text-zinc-800 dark:text-zinc-200">particularmente suscetíveis</strong>
+                a esse ciclo perigoso.
+              </p>
+
+              <div class="bg-zinc-50 dark:bg-zinc-900/50 rounded-xl p-6 border-l-4 border-accent">
+                <p class="text-zinc-700 dark:text-zinc-300 font-medium">O cenário atual revela que:</p>
+                <ul class="mt-4 space-y-3 text-zinc-600 dark:text-zinc-400">
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✦</span>
+                    <span><strong class="text-zinc-800 dark:text-zinc-200">23 milhões</strong> de pessoas apostaram em 2024, sendo <strong class="text-zinc-800 dark:text-zinc-200">2/3 homens</strong>.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✦</span>
+                    <span><strong class="text-zinc-800 dark:text-zinc-200">47%</strong> das pessoas que apostam estão endividadas e <strong class="text-zinc-800 dark:text-zinc-200">52%</strong> tentam recuperar perdas apostando mais.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✦</span>
+                    <span><strong class="text-zinc-800 dark:text-zinc-200">30%</strong> apostaram mais do que poderiam perder e <strong class="text-zinc-800 dark:text-zinc-200">25%</strong> dos apostadores são da Geração Z.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✦</span>
+                    <span><strong class="text-zinc-800 dark:text-zinc-200">4 milhões</strong> consideram aposta um tipo de investimento e <strong class="text-zinc-800 dark:text-zinc-200">3 milhões</strong> têm tendência ao vício.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== MATRIZ CSD ===== -->
+      <section id="matriz-csd" class="py-20 bg-zinc-50 dark:bg-zinc-900/40">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-1">
+              <span class="text-xs font-medium text-accent tracking-widest uppercase border border-accent/20 px-4 py-1.5 rounded-full">02</span>
+              <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mt-4 sticky top-24">Matriz CSD</h3>
+              <p class="text-sm text-zinc-400 dark:text-zinc-500 mt-2">Certezas · Suposições · Dúvidas</p>
+            </div>
+
+            <div class="md:col-span-4 overflow-x-auto">
+              <!-- Tabela CSD -->
+              <div class="bg-white dark:bg-zinc-800 rounded-xl border border-zinc-200 dark:border-zinc-700 overflow-hidden">
+                <!-- Cabeçalho -->
+                <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 bg-zinc-100 dark:bg-zinc-900">
+                  <div class="p-4 font-semibold text-sm text-zinc-700 dark:text-zinc-300">Item</div>
+                  <div class="p-4 font-semibold text-sm text-accent text-center">Certezas</div>
+                  <div class="p-4 font-semibold text-sm text-zinc-500 dark:text-zinc-400 text-center">Suposições</div>
+                  <div class="p-4 font-semibold text-sm text-zinc-500 dark:text-zinc-400 text-center">Dúvidas</div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- LINHA: ATORES                               -->
+                <!-- ============================================ -->
+                <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 border-t border-zinc-200 dark:border-zinc-700">
+                  <div class="p-4 flex items-center">
+                    <span class="font-semibold text-sm text-zinc-800 dark:text-zinc-200 bg-accent/10 dark:bg-accent/20 px-3 py-1 rounded-full">Atores</span>
+                  </div>
+
+                  <!-- Certezas -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>Jovens e Geração Z são mais vulneráveis ao vício em apostas.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>Pessoas endividadas buscam nas apostas uma "saída rápida".</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>O vício em apostas afeta áreas do cérebro ligadas ao controle de impulsos.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Suposições -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Uma página de bloqueio com informações educativas pode quebrar o ciclo.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Dados estatísticos impactam mais que mensagens genéricas de alerta.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Usuários neurodivergentes precisam de abordagens diferentes para resistir ao vício.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Dúvidas -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>O bloqueio total é mais eficaz que um aviso com opção de prosseguir?</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>As informações apresentadas são suficientes para desencorajar o usuário?</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Qual o melhor formato para apresentar os dados de forma impactante?</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- LINHA: CENÁRIOS                             -->
+                <!-- ============================================ -->
+                <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 border-t border-zinc-200 dark:border-zinc-700">
+                  <div class="p-4 flex items-center">
+                    <span class="font-semibold text-sm text-zinc-800 dark:text-zinc-200 bg-accent/10 dark:bg-accent/20 px-3 py-1 rounded-full">Cenários</span>
+                  </div>
+
+                  <!-- Certezas -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>O acesso a sites de apostas aumentou significativamente em 2024.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>As plataformas usam algoritmos para manter o usuário preso.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>O vício em apostas é reconhecido como um problema de saúde pública.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Suposições -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>O bloqueio preventivo é mais eficaz que o tratamento posterior.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>A página de bloqueio com dados estatísticos gera maior impacto.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Usuários podem desinstalar a extensão ao se sentirem frustrados.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Dúvidas -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>A página bloqueadora será eficaz para todos os perfis de apostadores?</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>O tom da mensagem é adequado ou pode gerar resistência?</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Como evitar que o usuário simplesmente desabilite a extensão?</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- LINHA: REGRAS                               -->
+                <!-- ============================================ -->
+                <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 border-t border-zinc-200 dark:border-zinc-700">
+                  <div class="p-4 flex items-center">
+                    <span class="font-semibold text-sm text-zinc-800 dark:text-zinc-200 bg-accent/10 dark:bg-accent/20 px-3 py-1 rounded-full">Regras</span>
+                  </div>
+
+                  <!-- Certezas -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>A extensão deve bloquear completamente o acesso ao site.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>A página de bloqueio deve apresentar informações educativas.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-accent mt-0.5">•</span>
+                        <span>Não deve haver opção de "prosseguir" ou "ignorar" o bloqueio.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Suposições -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>A página com estatísticas visuais é mais impactante que texto puro.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Explicar os mecanismos de vício ajuda o usuário a se conscientizar.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Links para apoio psicológico aumentam a eficácia do bloqueio.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Dúvidas -->
+                  <div class="p-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    <ul class="space-y-2">
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Qual a ordem mais eficaz para apresentar as informações?</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Deve haver diferentes níveis de bloqueio para diferentes perfis?</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-zinc-400 mt-0.5">•</span>
+                        <span>Como mensurar a eficácia do bloqueio educativo?</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PERSONAS ===== -->
+      <section id="personas" class="py-20 bg-white dark:bg-zinc-950">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-1">
+              <span class="text-xs font-medium text-accent tracking-widest uppercase border border-accent/20 px-4 py-1.5 rounded-full">03</span>
+              <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mt-4 sticky top-24">Personas</h3>
+              <p class="text-sm text-zinc-400 dark:text-zinc-500 mt-2">Mapa de Empatia</p>
+            </div>
+
+            <div class="md:col-span-4">
+              <!-- Card da Persona Principal -->
+              <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-200 dark:border-zinc-700 hover:border-accent transition-colors mb-8">
+                <div class="flex items-start gap-6 flex-wrap md:flex-nowrap">
+                  <div class="text-5xl bg-accent/10 dark:bg-accent/20 w-20 h-20 rounded-2xl flex items-center justify-center flex-shrink-0">🎯</div>
+
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 flex-wrap mb-2">
+                      <h4 class="font-bold text-2xl text-zinc-900 dark:text-white">Pedro</h4>
+                      <span class="text-xs bg-accent/20 text-accent px-3 py-1 rounded-full font-medium">Persona Principal</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-2">Estudante Universitário · 22 anos</p>
+                    <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Pedro começou a apostar por "diversão" com amigos, influenciado por anúncios e propagandas nas redes sociais. Teve uma <strong class="text-zinc-800 dark:text-zinc-200">vitória inicial</strong> que o fez acreditar que "era fácil ganhar dinheiro".</p>
+                    <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mt-2">Agora, após uma <strong class="text-zinc-800 dark:text-zinc-200">sequência de perdas</strong>, ele tenta recuperar o dinheiro apostando mais, entrando no ciclo vicioso. Sua família não sabe da situação e ele sente <strong class="text-zinc-800 dark:text-zinc-200">vergonha e ansiedade</strong>, mas não consegue parar.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mapa de Empatia -->
+              <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-700 overflow-hidden">
+                <!-- Linha 1: Pensa/Sente | Ouve -->
+                <div class="grid grid-cols-2 divide-x divide-zinc-200 dark:divide-zinc-700">
+                  <div class="p-6">
+                    <h5 class="text-xs font-semibold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                      O que ele pensa e sente
+                    </h5>
+                    <ul class="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"Só mais uma aposta e eu recupero tudo que perdi"</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"Eu tenho um método infalível, só preciso de mais sorte"</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"Se meus pais descobrirem, vou decepcionar todo mundo"</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"Eu sei que isso é errado, mas não consigo parar"</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="p-6">
+                    <h5 class="text-xs font-semibold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                      O que ele ouve
+                    </h5>
+                    <ul class="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"Ganhe dinheiro fácil do conforto da sua casa" > anúncios</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"Você está perdendo dinheiro, para enquanto é tempo" > amigos</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"As casas de aposta são todas iguais, vão te enrolar" > familiares</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"O vício em apostas é um problema sério" > especialistas</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Linha 2: Fala/Faz | Vê -->
+                <div class="border-t border-zinc-200 dark:border-zinc-700 grid grid-cols-2 divide-x divide-zinc-200 dark:divide-zinc-700">
+                  <div class="p-6">
+                    <h5 class="text-xs font-semibold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                      O que ele fala e faz
+                    </h5>
+                    <ul class="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>"Hoje é o dia que eu vou recuperar tudo"</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>Esconde as apostas da família e amigos</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>Pega dinheiro emprestado para apostar mais</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>Mente sobre onde está gastando o dinheiro</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="p-6">
+                    <h5 class="text-xs font-semibold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                      O que ele vê
+                    </h5>
+                    <ul class="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>Anúncios de "ganhe dinheiro fácil" nas redes sociais</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>Amigos que também apostam e têm "sorte"</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>O saldo da conta bancária diminuindo</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-accent mt-0.5">✦</span>
+                        <span>Notícias sobre pessoas que perderam tudo com apostas</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Linha 3: Dores | Ganhos -->
+                <div class="border-t border-zinc-200 dark:border-zinc-700 grid grid-cols-2 divide-x divide-zinc-200 dark:divide-zinc-700 bg-white dark:bg-zinc-800">
+                  <div class="p-6">
+                    <h5 class="text-xs font-semibold text-red-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                      Dores
+                    </h5>
+                    <ul class="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <li class="flex items-start gap-3">
+                        <span class="text-red-400 mt-0.5">✕</span>
+                        <span>Endividamento crescente e perda de dinheiro</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-red-400 mt-0.5">✕</span>
+                        <span>Ansiedade e culpa por esconder o vício da família</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-red-400 mt-0.5">✕</span>
+                        <span>Isolamento social e perda de relacionamentos</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-red-400 mt-0.5">✕</span>
+                        <span>Ilusão de controle e pensamento mágico</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="p-6">
+                    <h5 class="text-xs font-semibold text-emerald-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      Ganhos
+                    </h5>
+                    <ul class="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <li class="flex items-start gap-3">
+                        <span class="text-emerald-400 mt-0.5">✓</span>
+                        <span>Consciência sobre os mecanismos de vício das casas de aposta</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-emerald-400 mt-0.5">✓</span>
+                        <span>Bloqueio preventivo que impede o acesso aos sites</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-emerald-400 mt-0.5">✓</span>
+                        <span>Informações que desmistificam a ilusão do "ganho fácil"</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <span class="text-emerald-400 mt-0.5">✓</span>
+                        <span>Acesso a recursos de apoio e tratamento</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Citação da Persona -->
+              <div class="mt-6 text-center">
+                <blockquote class="text-sm text-zinc-500 dark:text-zinc-400 italic max-w-2xl mx-auto">
+                  "Eu sei que estou perdendo dinheiro. Minha família não merece isso. <br />
+                  <span class="text-zinc-700 dark:text-zinc-300 font-medium">Mas quando eu entro no site, parece que perco o controle.”</span>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== BENEFÍCIOS E JUSTIFICATIVAS ===== -->
+      <section id="beneficios" class="py-20 bg-zinc-50 dark:bg-zinc-900/40">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-1">
+              <span class="text-xs font-medium text-accent tracking-widest uppercase border border-accent/20 px-4 py-1.5 rounded-full">04</span>
+              <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mt-4 sticky top-24">Benefícios e<br />Justificativas</h3>
+              <p class="text-sm text-zinc-400 dark:text-zinc-500 mt-2">Blueprint do projeto</p>
+            </div>
+
+            <div class="md:col-span-4 space-y-8">
+              <div>
+                <h4 class="font-semibold text-zinc-900 dark:text-white text-sm mb-3 flex items-center gap-2">
+                  <span class="w-1 h-4 bg-accent rounded-full"></span>
+                  Blueprint - Ações do Usuário
+                </h4>
+
+                <div class="bg-white dark:bg-zinc-800 rounded-xl border border-zinc-200 dark:border-zinc-700 overflow-hidden">
+                  <!-- Cabeçalho -->
+                  <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 bg-zinc-100 dark:bg-zinc-900">
+                    <div class="p-3 font-semibold text-sm text-zinc-700 dark:text-zinc-300">Ações do Usuário</div>
+                    <div class="p-3 font-semibold text-sm text-zinc-700 dark:text-zinc-300 text-center">Instalar a extensão</div>
+                    <div class="p-3 font-semibold text-sm text-zinc-700 dark:text-zinc-300 text-center">Tentar acessar o site</div>
+                    <div class="p-3 font-semibold text-sm text-zinc-700 dark:text-zinc-300 text-center">Ler as informações</div>
+                  </div>
+
+                  <!-- Linha: Objetivos -->
+                  <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 border-t border-zinc-200 dark:border-zinc-700">
+                    <div class="p-3 flex items-center bg-zinc-50 dark:bg-zinc-900/50">
+                      <span class="font-medium text-sm text-zinc-700 dark:text-zinc-300">Objetivos</span>
+                    </div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Proteger-se do vício em apostas através de um bloqueio preventivo.</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Ser impedido de acessar o site e receber informações educativas.</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Compreender os mecanismos de vício e buscar ajuda se necessário.</div>
+                  </div>
+
+                  <!-- Linha: Atividades -->
+                  <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 border-t border-zinc-200 dark:border-zinc-700">
+                    <div class="p-3 flex items-center bg-zinc-50 dark:bg-zinc-900/50">
+                      <span class="font-medium text-sm text-zinc-700 dark:text-zinc-300">Atividades</span>
+                    </div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Baixar e instalar a extensão na Chrome Web Store.</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Digitar a URL do site de apostas e ser redirecionado à página de bloqueio.</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Ler os dados estatísticos e a explicação sobre como as casas de aposta viciam.</div>
+                  </div>
+
+                  <!-- Linha: Questões -->
+                  <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 border-t border-zinc-200 dark:border-zinc-700">
+                    <div class="p-3 flex items-center bg-zinc-50 dark:bg-zinc-900/50">
+                      <span class="font-medium text-sm text-zinc-700 dark:text-zinc-300">Questões</span>
+                    </div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">A página de bloqueio é suficientemente impactante para desencorajar o usuário?</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Os dados apresentados são compreensíveis e geram reflexão?</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">O usuário busca ajuda após ler as informações?</div>
+                  </div>
+
+                  <!-- Linha: Barreiras -->
+                  <div class="grid grid-cols-4 divide-x divide-zinc-200 dark:divide-zinc-700 border-t border-zinc-200 dark:border-zinc-700">
+                    <div class="p-3 flex items-center bg-zinc-50 dark:bg-zinc-900/50">
+                      <span class="font-medium text-sm text-zinc-700 dark:text-zinc-300">Barreiras</span>
+                    </div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Usuário pode desinstalar a extensão por frustração.</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">O vício pode ser mais forte que a consciência sobre o problema.</div>
+                    <div class="p-3 text-sm text-zinc-600 dark:text-zinc-400">Falta de acesso a redes de apoio e tratamento profissional.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SOLUÇÃO ===== -->
+      <section id="solucao" class="py-20 bg-white dark:bg-zinc-950">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-1">
+              <span class="text-xs font-medium text-accent tracking-widest uppercase border border-accent/20 px-4 py-1.5 rounded-full">05</span>
+              <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mt-4 sticky top-24">Solução</h3>
+              <p class="text-sm text-zinc-400 dark:text-zinc-500 mt-2">Como funciona a extensão</p>
+            </div>
+
+            <div class="md:col-span-4 space-y-8">
+              <!-- ============================================ -->
+              <!-- DESCRIÇÃO DA SOLUÇÃO                        -->
+              <!-- ============================================ -->
+              <div>
+                <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">Uma extensão para navegadores Chrome/Edge que <strong class="text-zinc-800 dark:text-zinc-200">bloqueia completamente</strong> o acesso a sites de apostas, substituindo-os por uma página com <strong class="text-zinc-800 dark:text-zinc-200">informações educativas</strong> sobre os mecanismos de vício utilizados pelas plataformas.</p>
+
+                <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                  <!-- Card: Bloqueio Total -->
+                  <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-5 border border-zinc-200 dark:border-zinc-700 hover:border-accent transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                      <span class="text-2xl">🚫</span>
+                      <h4 class="font-bold text-zinc-900 dark:text-white">Bloqueio Total</h4>
+                    </div>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400">A extensão <strong class="text-zinc-800 dark:text-zinc-200">bloqueia completamente</strong> o acesso a sites de apostas, sem oferecer a opção de "prosseguir" ou "ignorar" o aviso.</p>
+                  </div>
+
+                  <!-- Card: Página Educativa -->
+                  <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-5 border border-zinc-200 dark:border-zinc-700 hover:border-accent transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                      <span class="text-2xl">📊</span>
+                      <h4 class="font-bold text-zinc-900 dark:text-white">Página Educativa</h4>
+                    </div>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400">O usuário vê dados estatísticos impactantes e a explicação dos <strong class="text-zinc-800 dark:text-zinc-200">7 mecanismos de vício</strong> utilizados pelas casas de aposta.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ============================================ -->
+              <!-- FUNCIONALIDADES PRINCIPAIS                   -->
+              <!-- ============================================ -->
+              <div>
+                <h4 class="font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+                  <span class="text-accent">⚡</span>
+                  Funcionalidades Principais
+                </h4>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div class="flex items-start gap-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl p-4 border border-zinc-200 dark:border-zinc-700">
+                    <span class="text-accent text-xl mt-0.5">🔒</span>
+                    <div>
+                      <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Lista de sites bloqueados</p>
+                      <p class="text-xs text-zinc-500 dark:text-zinc-400">Principais sites de apostas pré-configurados</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl p-4 border border-zinc-200 dark:border-zinc-700">
+                    <span class="text-accent text-xl mt-0.5">📊</span>
+                    <div>
+                      <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Dados estatísticos</p>
+                      <p class="text-xs text-zinc-500 dark:text-zinc-400">Números reais sobre o impacto do vício em apostas</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl p-4 border border-zinc-200 dark:border-zinc-700">
+                    <span class="text-accent text-xl mt-0.5">🧠</span>
+                    <div>
+                      <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Explicação dos 7 mecanismos</p>
+                      <p class="text-xs text-zinc-500 dark:text-zinc-400">Como as plataformas viciam os usuários</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl p-4 border border-zinc-200 dark:border-zinc-700">
+                    <span class="text-accent text-xl mt-0.5">💡</span>
+                    <div>
+                      <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Caminho para a liberdade</p>
+                      <p class="text-xs text-zinc-500 dark:text-zinc-400">Recursos de apoio psicológico e tratamento</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ============================================ -->
+              <!-- COMO FUNCIONA O BLOQUEIO                    -->
+              <!-- ============================================ -->
+              <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-700 p-6">
+                <h4 class="font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
+                  <span class="text-accent">🔄</span>
+                  Como funciona o bloqueio
+                </h4>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                  <!-- Passo 1 -->
+                  <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-accent/10 dark:bg-accent/20 flex items-center justify-center mx-auto mb-3">
+                      <span class="text-accent font-bold text-lg">1</span>
+                    </div>
+                    <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Usuário tenta acessar</p>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400">Digita a URL de um site de apostas</p>
+                  </div>
+
+                  <!-- Passo 2 -->
+                  <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-accent/10 dark:bg-accent/20 flex items-center justify-center mx-auto mb-3">
+                      <span class="text-accent font-bold text-lg">2</span>
+                    </div>
+                    <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Extensão bloqueia</p>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400">Redireciona para a página de bloqueio</p>
+                  </div>
+
+                  <!-- Passo 3 -->
+                  <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-accent/10 dark:bg-accent/20 flex items-center justify-center mx-auto mb-3">
+                      <span class="text-accent font-bold text-lg">3</span>
+                    </div>
+                    <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Informação e reflexão</p>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400">Usuário lê os dados e os 7 mecanismos de vício</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== REQUISITOS FUNCIONAIS E NÃO FUNCIONAIS ===== -->
+      <section id="requisitos" class="py-20 bg-zinc-50 dark:bg-zinc-900/40">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-1">
+              <span class="text-xs font-medium text-accent tracking-widest uppercase border border-accent/20 px-4 py-1.5 rounded-full">06</span>
+              <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mt-4 sticky top-24">Requisitos do<br />Sistema</h3>
+              <p class="text-sm text-zinc-400 dark:text-zinc-500 mt-2">Funcionais · Não Funcionais</p>
+            </div>
+
+            <div class="md:col-span-4">
+              <!-- Grid de 2 colunas: Funcionais | Não Funcionais -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <!-- ============================================ -->
+                <!-- REQUISITOS FUNCIONAIS                        -->
+                <!-- ============================================ -->
+                <div class="bg-white dark:bg-zinc-800 rounded-xl border border-zinc-200 dark:border-zinc-700 overflow-hidden">
+                  <div class="bg-accent/10 dark:bg-accent/20 px-6 py-4 border-b border-zinc-200 dark:border-zinc-700">
+                    <h4 class="font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                      <span class="text-accent text-lg">⚙️</span>
+                      Requisitos Funcionais
+                    </h4>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">O que o sistema deve fazer</p>
+                  </div>
+
+                  <div class="p-6 space-y-4">
+                    <!-- RF01 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-accent bg-accent/10 dark:bg-accent/20 px-2 py-0.5 rounded mt-0.5">RF01</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Bloqueio de acesso</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">A extensão deve bloquear completamente o acesso a sites de apostas, sem oferecer opção de prosseguir.</p>
+                      </div>
+                    </div>
+
+                    <!-- RF02 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-accent bg-accent/10 dark:bg-accent/20 px-2 py-0.5 rounded mt-0.5">RF02</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Página de bloqueio</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">Ao tentar acessar um site bloqueado, o usuário deve ser redirecionado a uma página com informações educativas.</p>
+                      </div>
+                    </div>
+
+                    <!-- RF03 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-accent bg-accent/10 dark:bg-accent/20 px-2 py-0.5 rounded mt-0.5">RF03</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Dados estatísticos</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">A página deve exibir dados reais sobre o impacto do vício em apostas (números, porcentagens, etc.).</p>
+                      </div>
+                    </div>
+
+                    <!-- RF04 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-accent bg-accent/10 dark:bg-accent/20 px-2 py-0.5 rounded mt-0.5">RF04</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">7 mecanismos de vício</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">A página deve explicar os 7 mecanismos utilizados pelas casas de aposta para viciar os usuários.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- REQUISITOS NÃO FUNCIONAIS                    -->
+                <!-- ============================================ -->
+                <div class="bg-white dark:bg-zinc-800 rounded-xl border border-zinc-200 dark:border-zinc-700 overflow-hidden">
+                  <div class="bg-accent/10 dark:bg-accent/20 px-6 py-4 border-b border-zinc-200 dark:border-zinc-700">
+                    <h4 class="font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                      <span class="text-accent text-lg">🔧</span>
+                      Requisitos Não Funcionais
+                    </h4>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Como o sistema deve se comportar</p>
+                  </div>
+
+                  <div class="p-6 space-y-4">
+                    <!-- RNF01 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-zinc-500 dark:text-zinc-400 bg-zinc-200 dark:bg-zinc-800 px-2 py-0.5 rounded mt-0.5">RNF01</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Performance</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">A extensão deve consumir menos de 20MB de memória em idle e não afetar a performance do navegador.</p>
+                      </div>
+                    </div>
+
+                    <!-- RNF02 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-zinc-500 dark:text-zinc-400 bg-zinc-200 dark:bg-zinc-800 px-2 py-0.5 rounded mt-0.5">RNF02</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Disponibilidade</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">A extensão deve funcionar offline, armazenando a lista de sites bloqueados localmente.</p>
+                      </div>
+                    </div>
+
+                    <!-- RNF03 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-zinc-500 dark:text-zinc-400 bg-zinc-200 dark:bg-zinc-800 px-2 py-0.5 rounded mt-0.5">RNF03</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Compatibilidade</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">A extensão deve ser compatível com Chrome 88+, Edge 88+ e demais navegadores baseados em Chromium.</p>
+                      </div>
+                    </div>
+
+                    <!-- RNF04 -->
+                    <div class="flex items-start gap-3">
+                      <span class="text-xs font-bold text-zinc-500 dark:text-zinc-400 bg-zinc-200 dark:bg-zinc-800 px-2 py-0.5 rounded mt-0.5">RNF04</span>
+                      <div>
+                        <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Privacidade</p>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">Nenhum dado do usuário deve ser enviado para servidores externos. Todas as informações ficam armazenadas localmente.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Resumo visual dos requisitos -->
+              <div class="mt-8 bg-white dark:bg-zinc-800 rounded-xl border border-zinc-200 dark:border-zinc-700 p-6">
+                <div class="flex flex-wrap items-center gap-6 justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">📊</span>
+                    <div>
+                      <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Total de Requisitos</p>
+                      <p class="text-xs text-zinc-500 dark:text-zinc-400">4 Funcionais · 4 Não Funcionais</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">🎯</span>
+                    <div>
+                      <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Mecanismo Principal</p>
+                      <p class="text-xs text-zinc-500 dark:text-zinc-400">Bloqueio total + Página educativa</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">📦</span>
+                    <div>
+                      <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">Armazenamento</p>
+                      <p class="text-xs text-zinc-500 dark:text-zinc-400">chrome.storage.local · Offline</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-zinc-100 dark:border-zinc-900">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-zinc-400">
+          © <span id="yr"></span> Todos os direitos reservados. <br />
+          Desenvolvido por
+          <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a>
+          • Distribuído por<a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a>
+        </p>
+        <p class="text-xs text-zinc-500">
+          Construído com
+          <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Tailwind CSS</a>
+          &amp;
+          <a href="https://alpinejs.dev" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Alpine.js</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
