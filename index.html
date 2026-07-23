@@ -1,45 +1,91 @@
 <!doctype html>
 <html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
   <head>
+    <!-- 1. Configurações Básicas                -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Mariana Ramacciotti - Desenvolvedora Backend Java; trabalha com microsserviços, AWS e boas práticas de desenvolvimento. Confira meus projetos, artigos e habilidades técnicas." />
-    <meta name="keywords" content="Desenvolvedora Backend, Java, Microsserviços, AWS, PostgreSQL, Spring Boot, Clean Code, Mariana Ramacciotti, Desenvolvimento de Software" />
-    <meta name="author" content="Mariana Ramacciotti" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Mariana Ramacciotti - Desenvolvedora Backend" />
-    <meta property="og:description" content="Portfólio de Mariana Ramacciotti, Desenvolvedora Backend especializada em Java, microsserviços e AWS." />
-    <meta property="og:type" content="website" />
-    <meta name="google-site-verification" content="r-zHIxfd_XKoa976F_Q1f_6xslxMLFR7Ze2aJRFMkGA" />
-    <title>Ramacciotti | Backend Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- 2. Título e Descrição (SEO)              -->
+    <title>Mariana Ramacciotti | Desenvolvedora Backend Java &amp; Microsserviços</title>
+    <meta name="description" content="Portfólio de Mariana Ramacciotti, Desenvolvedora Backend Java especialista em microsserviços, AWS, Spring Boot e boas práticas de desenvolvimento. Confira projetos, artigos e habilidades técnicas." />
+    <meta name="keywords" content="Desenvolvedora Backend, Java, Microsserviços, AWS, PostgreSQL, Spring Boot, Clean Code, API REST, Mariana Ramacciotti, Desenvolvimento de Software" />
+    <meta name="author" content="Mariana Ramacciotti" />
+
+    <!-- 3. Controle de Robôs (Indexação)            -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://ramacciotti.github.io/portfolio/" />
+
+    <!-- 4. Open Graph (Compartilhamento Social)     -->
+    <meta property="og:title" content="Mariana Ramacciotti | Desenvolvedora Backend Java" />
+    <meta property="og:description" content="Portfólio de Mariana Ramacciotti, Desenvolvedora Backend especializada em Java, microsserviços e AWS. Veja meus projetos e habilidades técnicas." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ramacciotti.github.io/portfolio/" />
+    <meta property="og:image" content="https://ramacciotti.github.io/portfolio/img/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Mariana Ramacciotti - Portfólio" />
+
+    <!-- 5. Dados Estruturados (JSON-LD)             -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mariana Ramacciotti",
+        "jobTitle": "Desenvolvedora Backend Java",
+        "description": "Desenvolvedora Backend especialista em Java, microsserviços, AWS e Spring Boot.",
+        "url": "https://ramacciotti.github.io/portfolio/",
+        "sameAs": ["https://www.linkedin.com/in/marianaramacciotti/", "https://ramacciotti.github.io/"],
+        "knowsAbout": ["Java", "Spring Boot", "Microsserviços", "AWS", "Documentação", "Clean Code", "API REST"]
+      }
+    </script>
+
+    <!-- 6. Verificação do Site (Google Search Console)             -->
+    <meta name="google-site-verification" content="r-zHIxfd_XKoa976F_Q1f_6xslxMLFR7Ze2aJRFMkGA" />
+
+    <!-- 7. Ícones do Site             -->
+    <link rel="icon" href="img/favicon.png?v=3" type="image/png" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+
+    <!-- 8. Fontes e CSS (Pré-conexão para melhor performance)         -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="img/favicon.png?v=3" type="image/png" />
-
+    <!--9.  Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            fontFamily: { display: ["Poppins", "sans-serif"], body: ["Poppins", "sans-serif"] },
-            colors: { accent: "#f15025", "accent-light": "#ff8f5c" },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              accent: "#f15025",
+              "accent-light": "#ff8f5c",
+            },
           },
         },
       };
     </script>
+
+    <!-- 10. Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- 11. CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
     <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
       <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
         <a href="index.html" class="font-display font-bold text-xl tracking-tight relative z-10">
-          <img src="./img/logo_oficial_laranja.png" alt="Otti" loading="eager" height="40" width="40" class="inline-block mr-2" />
+          <img src="./img/otti_logo_laranja.png" alt="Otti" loading="eager" height="40" width="40" class="inline-block mr-2" />
         </a>
 
         <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
@@ -97,17 +143,17 @@
                   Confira meus Projetos
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/marianaramacciotti/" target="_blank" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Entre em Contato</a>
+                <a href="https://www.linkedin.com/in/marianaramacciotti/" target="_blank" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Linkedin</a>
               </div>
             </div>
 
             <div class="reveal d2 flex justify-center md:justify-end">
               <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
                 <div class="pf w-full h-full rounded-3xl">
-                  <img src="./img/oficial.jpg" alt="Mariana Ramacciotti | Desenvolvedora Backend Java" loading="eager" />
+                  <img src="./img/mariana_ramacciotti_foto.jpg" alt="Mariana Ramacciotti | Desenvolvedora Backend Java" loading="eager" />
                 </div>
                 <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">
-                  <img src="./img/logo_oficial_branco.png" alt="Otti" loading="eager" height="30" width="30" />
+                  <img src="./img/otti_logo_branco.png" alt="Otti" loading="eager" height="30" width="30" />
                 </div>
               </div>
             </div>
@@ -117,19 +163,27 @@
 
       <section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
         <div class="max-w-6xl mx-auto px-6">
-          <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
             <div class="reveal order-2 md:order-1">
               <div class="pf w-full max-w-md mx-auto rounded-3xl overflow-hidden">
-                <img src="./img/oficial2.jpg" alt="Mariana Ramacciotti" loading="lazy" class="w-full h-auto object-cover" />
+                <img src="./img/marina_ramacciotti_perfil.jpg" alt="Mariana Ramacciotti" loading="lazy" class="w-full h-auto object-cover" />
               </div>
             </div>
 
-            <div class="order-1 md:order-2">
-              <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Sobre Mim</p>
-              <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">Um pouco sobre<br />quem eu sou</h2>
-              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Desenvolvedora Java com mais de 4 anos de experiência em back-end com Spring Boot, microsserviços, APIs REST e AWS.</p>
-              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Minha trajetória inclui passagens por instituições como Itaú, BTG Pactual, Midway e Vinci Partners, onde desenvolvi soluções para gestão de parcerias, onboarding, open banking e previdência privada; sempre com foco em código limpo e boas práticas.</p>
-              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Como profissional autista, trago uma perspectiva única para resolução de problemas: pensamento sistêmico, atenção profunda aos detalhes e uma capacidade natural de identificar padrões e inconsistências. Essas características me permitem criar documentação clara e estruturas bem organizadas que beneficiam toda a equipe.</p>
+            <div class="order-1 md:order-2" style="text-align: justify">
+              <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Introdução</p>
+              <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">Sobre mim</h2>
+              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Desenvolvedora Java com <strong>mais de 4 anos</strong> de experiência em back-end com Spring Boot, microsserviços, APIs REST e AWS.</p>
+              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Minha trajetória inclui passagens por instituições como <strong>Itaú, BTG Pactual, Midway e Vinci Partners</strong>, onde desenvolvi soluções para gestão de parcerias, onboarding, open banking e previdência privada; sempre com foco em código limpo e boas práticas.</p>
+              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Como <strong>profissional autista</strong>, trago uma perspectiva única: pensamento sistêmico, atenção profunda aos detalhes e uma capacidade natural de identificar padrões e inconsistências.</p>
+              <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Como hobbbie, gosto de criar soluções que promovam <strong>bem-estar e produtividade</strong> no dia a dia, como o
+                <a href="#" @click.prevent="projectFilter = 'community'; setTimeout(() => { document.getElementById('no-more-bets').scrollIntoView({ behavior: 'smooth' }) }, 100)" style="color: #f15025"><strong>Chega de Apostas</strong></a>
+                e o
+                <a href="#" @click.prevent="projectFilter = 'community'; setTimeout(() => { document.getElementById('youtuned').scrollIntoView({ behavior: 'smooth' }) }, 100)" style="color: #f15025"><strong>Youtuned</strong></a
+                >.
+              </p>
+              <br />
               <div class="reveal d4">
                 <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack &amp; Ferramentas</p>
                 <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
@@ -140,6 +194,9 @@
                   <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">AWS</span>
                   <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">JUnit</span>
                   <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Insomnia</span>
+                  <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">MySQL</span>
+                  <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">PostgreSQL</span>
+                  <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Git</span>
                   <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Datadog</span>
                 </div>
               </div>
@@ -288,7 +345,7 @@
               </div>
             </article>
 
-            <article x-show="projectFilter==='community'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+            <article id="no-more-bets" x-show="projectFilter==='community'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
               <div class="pf w-full h-64 md:h-80 relative">
                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/jSgTd_6SzEA?si=LMYGVOKqyg5PgdGe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
               </div>
@@ -300,10 +357,53 @@
                   <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">CSS</span>
                   <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Javascript</span>
                 </div>
-                <a href="chrome-extention-no-more-bets.html">
-                  <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Extensão do Chrome que bloqueia sites de casas de aposta</h3>
-                </a>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Uma que ajuda os usuários a bloquear e evitar sites de apostas. Redireciona domínios de apostas conhecidos para uma landing page com informações sobre apostas no Brasil. Ideal para quem está tentando parar de jogar.</p>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Bloqueio de sites de casas de aposta</h3>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Ajuda os usuários a bloquear e evitar sites de apostas. Redireciona domínios de apostas conhecidos para uma landing page com informações sobre apostas no Brasil. Ideal para quem está tentando parar de jogar.</p>
+                <div class="flex flex-wrap items-center gap-3 mt-5">
+                  <a href="https://chromewebstore.google.com/detail/cbdbmghlibglpjlfgnkdfmconcgppkcl?authuser=0&hl=pt-BR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/80 text-white font-medium px-5 py-2.5 rounded-full transition-colors text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+                    </svg>
+                    Extensão no Chrome Web Store
+                  </a>
+                  <a href="/chrome-extention-no-more-bets.html" class="inline-flex items-center gap-1 text-sm text-zinc-400 hover:text-accent transition-colors">
+                    Confira o Projeto
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article id="youtuned" x-show="projectFilter==='community'" class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-1">
+              <div class="pf w-full h-64 md:h-80 relative">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/wyXNSsiKbg8?si=P15ojtP293KCzvSX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+              </div>
+              <div class="p-7">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Extensão</span>
+                  <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Chrome</span>
+                  <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Html</span>
+                  <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">CSS</span>
+                  <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Javascript</span>
+                </div>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Remoção de shorts, recomendados e bloqueio de palavras no Youtube</h3>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Remove blocos de Shorts, restaura o contador de dislikes quando possível, e permite esconder vídeos e comentários com base em palavras bloqueadas.</p>
+                <div class="flex flex-wrap items-center gap-3 mt-5">
+                  <a href="https://chromewebstore.google.com/detail/youtuned-remove-shorts-re/ecffiihffbfmjoilgkbgicnjfiocggca?authuser=0&hl=pt-BR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/80 text-white font-medium px-5 py-2.5 rounded-full transition-colors text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+                    </svg>
+                    Extensão no Chrome Web Store
+                  </a>
+                  <a href="/chrome-extention-youtuned.html" class="inline-flex items-center gap-1 text-sm text-zinc-400 hover:text-accent transition-colors">
+                    Confira o Projeto
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </article>
 
@@ -363,8 +463,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
                 </svg>
               </div>
-              <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Ecossistema AWS</h3>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Orquestro a comunicação com BFFs, Lambdas e Step Functions para entregar os fluxos de ponta a ponta.</p>
+              <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Extensões Desktop</h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Desenvolvo extensões focadas em bem-estar e produtividade, criadas para tornar o dia a dia mais leve e eficiente.</p>
             </article>
           </div>
         </div>
